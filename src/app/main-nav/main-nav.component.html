@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="true">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <img class="logo" src="../../assets/image/Jaseowns_PH_Logo.png" alt="">
+  <div class="space">
+    <input type="text" placeholder="search">
+  </div>
+  <a href="">LOG IN</a>
+  <span class="material-icons md-48">input</span>
+</mat-toolbar>
+<mat-sidenav-container  class="sidenav-container">
+  <mat-sidenav cdk-scrollable #drawer class="sidenav" fixedInViewport ="false"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Xem Bài Đăng</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
