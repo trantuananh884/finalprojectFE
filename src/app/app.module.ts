@@ -13,16 +13,25 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+// import { ToolbarComponent } from './toolbar/toolbar.component';
+import { PostpageComponent } from './postpage/postpage.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {ToolbarComponent} from './toolbar/toolbar.component';
+import {MatChipsModule} from '@angular/material/chips';
+
+
 @NgModule({
   declarations: [
 
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PostpageComponent
   ],
   imports: [
+    MatChipsModule,
     EditorModule,
     FormsModule,
     BrowserModule,
@@ -33,7 +42,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+MatInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
