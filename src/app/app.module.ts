@@ -20,6 +20,17 @@ import {MatInputModule} from '@angular/material/input';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { DisplayBlogComponent } from './display-blog/display-blog.component';
+import { TestComponent } from './test/test.component';
+import { FirebaseUploadComponent } from './firebase-upload/firebase-upload.component';
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "../environments/environment";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
+import {RouterModule} from '@angular/router';
+
 
 
 @NgModule({
@@ -30,7 +41,11 @@ import { DisplayBlogComponent } from './display-blog/display-blog.component';
     MainNavComponent,
     ToolbarComponent,
     PostpageComponent,
-    DisplayBlogComponent
+    DisplayBlogComponent,
+    TestComponent,
+    FirebaseUploadComponent,
+
+
   ],
   imports: [
     MatChipsModule,
@@ -46,8 +61,10 @@ import { DisplayBlogComponent } from './display-blog/display-blog.component';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-MatInputModule,
-
+    MatInputModule,
+    RouterModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   bootstrap: [AppComponent]
