@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { DisplayBlogComponent } from './display-blog/display-blog.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {MatChipsModule} from '@angular/material/chips';
     TexteditorComponent,
     MainNavComponent,
     ToolbarComponent,
-    PostpageComponent
+    PostpageComponent,
+    DisplayBlogComponent
   ],
   imports: [
     MatChipsModule,
