@@ -44,8 +44,6 @@ import {RouterModule} from '@angular/router';
     DisplayBlogComponent,
     TestComponent,
     FirebaseUploadComponent,
-
-
   ],
   imports: [
     MatChipsModule,
@@ -62,7 +60,6 @@ import {RouterModule} from '@angular/router';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    RouterModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
