@@ -30,6 +30,8 @@ import {
   AngularFireUploadTask
 } from "@angular/fire/storage";
 import {RouterModule} from '@angular/router';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -61,7 +63,9 @@ import {RouterModule} from '@angular/router';
     MatFormFieldModule,
     MatInputModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

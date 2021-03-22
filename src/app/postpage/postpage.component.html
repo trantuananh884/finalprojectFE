@@ -12,6 +12,17 @@
   <mat-label>Input your description here</mat-label>
   <input matInput placeholder="description...">
 </mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Privacy</mat-label>
+  <mat-select>
+    <mat-option value="true">
+      Public
+    </mat-option>
+    <mat-option value="false">
+      Private
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 <mat-form-field class="example-chip-list">
   <mat-label>Favorite Fruits</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">
