@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import {Tag} from '../model/tag';
+import {Blog} from '../model/blog';
 
-class Fruit {
-  name?:string;
-}
+
 
 @Component({
   selector: 'app-postpage',
@@ -12,24 +12,23 @@ class Fruit {
   styleUrls: ['./postpage.component.css']
 })
 export class PostpageComponent implements OnInit {
+  blog:Blog;
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruits: Fruit[] = [
-    {name: 'Lemon'},
-    {name: 'Lime'},
-    {name: 'Apple'},
-  ];
+  tags: Tag[] = [
+    {name: 'Blog'},
+    {name: 'BlogHub'},
 
+  ];
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
-
     // Add our fruit
     if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
+      this.tags.push({name: value.trim()});
     }
 
     // Reset the input value
@@ -38,11 +37,12 @@ export class PostpageComponent implements OnInit {
     }
   }
 
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
+  remove(tag: Tag): void {
+    const index = this.tags.indexOf(tag);
 
     if (index >= 0) {
-      this.fruits.splice(index, 1);
+      this.tags.splice(index, 1);
+      console.log(this.tags)
     }
   }
   constructor() { }

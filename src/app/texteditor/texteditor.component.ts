@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TexteditorComponent implements OnInit {
   title = 'tinymcedemo';
-  data: any;
+  data?: string;
   tinymceinit: any;
   constructor() {
     this.tinymceinit = {
