@@ -1,5 +1,7 @@
 <form [formGroup]="loginForm">
   <input type="text" placeholder="username" formControlName="username">
+  <div><p *ngIf="loginForm.controls['username'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
+  <div><p *ngIf="loginForm.controls['username'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
   <input type="text" placeholder="password" formControlName="password">
   <button (click)="login()" >dang nhap</button>
 </form>

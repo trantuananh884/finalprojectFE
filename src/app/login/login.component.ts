@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 import {JwtService} from "../jwt.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -14,14 +15,14 @@ export class LoginComponent implements OnInit {
   });
 
 
-  constructor(private jwtService : JwtService) { }
+  constructor(private jwtService : JwtService,private router : Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    this.jwtService.login(this.loginForm.value).subscribe(res=>{
-      console.log(res)
+    this.jwtService.login(this.loginForm.value).subscribe(()=>{
+      this.router.navigateByUrl("/textgit ")
     },error => {
       console.log(error)
     })

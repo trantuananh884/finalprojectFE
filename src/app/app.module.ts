@@ -13,7 +13,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-// import { ToolbarComponent } from './toolbar/toolbar.component';
 import { PostpageComponent } from './postpage/postpage.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -23,6 +22,7 @@ import { DisplayBlogComponent } from './display-blog/display-blog.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './register/register.component';
+import {JwtModule} from "@auth0/angular-jwt";
 
 
 @NgModule({
@@ -53,9 +53,18 @@ import { RegisterComponent } from './register/register.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: function  tokenGetter() {
+    //       return localStorage.getItem('token');},
+    //     whitelistedDomains: ['localhost:8080'],
+    //     blacklistedRoutes: ['http://localhost:8080/login']
+    //   }
+    // })
 
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {tap} from "rxjs/operators";
 import {environment} from "../environments/environment";
@@ -12,7 +12,8 @@ const API_URL = `${environment.apiURL}`
 })
 export class JwtService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
   // login(userLogin : UserLogin) {
   //   console.log(userLogin)
@@ -22,18 +23,34 @@ export class JwtService {
   //   }))
   // }
 
-  login(userLogin : UserLogin) {
+  login(userLogin: UserLogin) {
     console.log(userLogin)
-    return this.httpClient.post<{token:  string}>(`${API_URL}/login`, userLogin).pipe(tap(res => {
-      console.log(res)
+    return this.httpClient.post<{ token: string, username: string, roles: any }>(`${API_URL}/login`, userLogin).pipe(tap(res => {
       localStorage.setItem('token', res.token);
+      localStorage.setItem('username', res.username);
+      localStorage.setItem('roles', res.roles)
+    }, error => {
+      console.log(error)
     }));
   }
 
-  register(userSignUp : UserSignUp) {
-    return this.httpClient.post<{access_token: string}>(`${API_URL}/register`, userSignUp).pipe(tap(res => {
-      console.log(res)
-    }))
+  register(userSignUp: UserSignUp) {
+    return this.httpClient.post<{ access_token: string }>(`${API_URL}/register`, userSignUp).pipe(tap(res => {
+        console.log(res)
+      }, error => {
+        console.log(error)
+      }
+    ))
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    localStorage.removeItem('roles');
+  }
+
+  public get loggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
   }
 
 
