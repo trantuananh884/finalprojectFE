@@ -5,6 +5,8 @@ import {MainNavComponent} from './main-nav/main-nav.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {PostpageComponent} from './postpage/postpage.component';
 import {DisplayBlogComponent} from './display-blog/display-blog.component';
+import {TestComponent} from './test/test.component';
+import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 
@@ -26,7 +28,11 @@ const routes: Routes = [
   {
     path:"register",
     component:RegisterComponent
-  }
+  },
+  {path:'test',
+    component:TestComponent},
+  {path:'firebase',
+    component:FirebaseUploadComponent}
 ];
 
 @NgModule({

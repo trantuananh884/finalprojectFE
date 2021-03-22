@@ -10,6 +10,10 @@ export class ToolbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  checkToken(){
+
+  }
 }

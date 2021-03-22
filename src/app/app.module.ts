@@ -1,28 +1,40 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { EditorModule } from '@tinymce/tinymce-angular';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TexteditorComponent } from './texteditor/texteditor.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {EditorModule} from '@tinymce/tinymce-angular';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {TexteditorComponent} from './texteditor/texteditor.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavComponent } from './main-nav/main-nav.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { PostpageComponent } from './postpage/postpage.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MainNavComponent} from './main-nav/main-nav.component';
+import {LayoutModule} from '@angular/cdk/layout';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {PostpageComponent} from './postpage/postpage.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
-import { DisplayBlogComponent } from './display-blog/display-blog.component';
-import { LoginComponent } from './login/login.component';
+import {DisplayBlogComponent} from './display-blog/display-blog.component';
+import {LoginComponent} from './login/login.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { RegisterComponent } from './register/register.component';
+import {RegisterComponent} from './register/register.component';
 import {JwtModule} from "@auth0/angular-jwt";
+import {TestComponent} from './test/test.component';
+import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {
+  AngularFireStorageModule,
+  AngularFireStorageReference,
+  AngularFireUploadTask
+} from "@angular/fire/storage";
+import {RouterModule} from '@angular/router';
+import {MatOptionModule} from '@angular/material/core';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -35,7 +47,9 @@ import {JwtModule} from "@auth0/angular-jwt";
     PostpageComponent,
     DisplayBlogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    TestComponent,
+    FirebaseUploadComponent,
   ],
   imports: [
     MatChipsModule,
@@ -54,18 +68,14 @@ import {JwtModule} from "@auth0/angular-jwt";
     MatInputModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // JwtModule.forRoot({
-    //   config: {
-    //     tokenGetter: function  tokenGetter() {
-    //       return localStorage.getItem('token');},
-    //     whitelistedDomains: ['localhost:8080'],
-    //     blacklistedRoutes: ['http://localhost:8080/login']
-    //   }
-    // })
-
+    MatInputModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    MatOptionModule,
+    MatSelectModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
