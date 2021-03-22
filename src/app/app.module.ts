@@ -4,7 +4,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TexteditorComponent } from './texteditor/texteditor.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -20,6 +20,9 @@ import {MatInputModule} from '@angular/material/input';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
 import { DisplayBlogComponent } from './display-blog/display-blog.component';
+import { LoginComponent } from './login/login.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -30,7 +33,9 @@ import { DisplayBlogComponent } from './display-blog/display-blog.component';
     MainNavComponent,
     ToolbarComponent,
     PostpageComponent,
-    DisplayBlogComponent
+    DisplayBlogComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     MatChipsModule,
@@ -46,7 +51,9 @@ import { DisplayBlogComponent } from './display-blog/display-blog.component';
     MatIconModule,
     MatListModule,
     MatFormFieldModule,
-MatInputModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],
