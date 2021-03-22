@@ -7,6 +7,8 @@ import {PostpageComponent} from './postpage/postpage.component';
 import {DisplayBlogComponent} from './display-blog/display-blog.component';
 import {TestComponent} from './test/test.component';
 import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
+import {LoginComponent} from "./login/login.component";
+import {RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
   {path:'text',
@@ -19,6 +21,14 @@ const routes: Routes = [
     component:PostpageComponent},
   {path:'display',
     component:DisplayBlogComponent},
+  {
+    path:"login",
+    component:LoginComponent
+  },
+  {
+    path:"register",
+    component:RegisterComponent
+  },
   {path:'test',
     component:TestComponent},
   {path:'firebase',

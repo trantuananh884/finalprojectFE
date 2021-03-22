@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm">
+  <input type="text" placeholder="username" formControlName="username">
+  <div><p *ngIf="loginForm.controls['username'].hasError('required')" style="color:red">trường này bắt buộc nhập</p></div>
+  <div><p *ngIf="loginForm.controls['username'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>
+  <input type="text" placeholder="password" formControlName="password">
+  <button (click)="login()" >dang nhap</button>
+</form>
+<!--form #formAdd="ngForm" (ngSubmit)="addStudent(formAdd)">-->
+<!--<table>-->
+<!--  <tr>-->
+<!--    <td>Name</td>-->
+<!--    <td><input type="text" placeholder="Name" ></td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Age</td>-->
+<!--    <td><input type="number" placeholder="Age" formControlName=""></td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td>Department</td>-->
+<!--    <td>-->
+<!--      <select  formControlName="department">-->
+<!--        <option *ngFor="let department of allDepartments" value="{{department.id}}">{{department.name}}</option>-->
+<!--      </select></td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td colspan="2" align="center"><button type="submit">Add</button></td>-->
+<!--  </tr>-->
+<!--</table>-->
+<!--</form>-->
