@@ -45,6 +45,7 @@ import {MatCardModule} from '@angular/material/card';
 import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
+import { LogoutComponent } from './logout/logout.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -66,6 +67,7 @@ import {InterceptorService} from './service/interceptor.service';
     // TestChuyenTrangComponent,
     ForbiddenComponent,
     ErrorNotFoundComponent,
+    LogoutComponent,
   ],
   imports: [
     MatChipsModule,

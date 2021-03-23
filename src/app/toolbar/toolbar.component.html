@@ -12,6 +12,7 @@
   </div>
   <div *ngIf="rememeberMe === 'loggedNotRemember'">
     <a routerLink="../profile/{{userId}}">{{username}}</a>
+    <a routerLink="../logout">logout</a>
   </div>
 
   <ng-template #loggedOut>

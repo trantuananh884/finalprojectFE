@@ -48,9 +48,11 @@ export class JwtService {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     localStorage.removeItem('roles');
+    localStorage.removeItem('userId');
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('roles');
+    sessionStorage.removeItem('userId');
   }
 
   public get loggedIn(): string {
