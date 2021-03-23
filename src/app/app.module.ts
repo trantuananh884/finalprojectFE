@@ -46,6 +46,7 @@ import {ErrorNotFoundComponent} from './error-not-found/error-not-found.componen
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
 import { LogoutComponent } from './logout/logout.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -91,7 +92,8 @@ import { LogoutComponent } from './logout/logout.component';
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     MatOptionModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatTooltipModule
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
