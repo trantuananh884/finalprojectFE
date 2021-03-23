@@ -19,14 +19,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
-import { CategoryListComponent } from './category-list/category-list.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import { CategoryUpdateComponent } from './category-update/category-update.component';
 import {HttpClientModule} from "@angular/common/http";
-import { CategoryCreateComponent } from './category-create/category-create.component';
-import { UserListComponent } from './user-list/user-list.component';
+import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
+import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
+import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
+import {UserListComponent} from "./admin/user/user-list/user-list.component";
+
+
 
 
 @NgModule({
