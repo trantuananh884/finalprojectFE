@@ -47,6 +47,7 @@ import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
 import { LogoutComponent } from './logout/logout.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -69,6 +70,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     ForbiddenComponent,
     ErrorNotFoundComponent,
     LogoutComponent,
+    ThumbnailDisplayComponent,
   ],
   imports: [
     MatChipsModule,
