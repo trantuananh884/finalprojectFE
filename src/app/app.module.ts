@@ -20,7 +20,7 @@ import {ToolbarComponent} from './toolbar/toolbar.component';
 import {MatChipsModule} from '@angular/material/chips';
 import {DisplayBlogComponent} from './display-blog/display-blog.component';
 import {LoginComponent} from './login/login.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {RegisterComponent} from './register/register.component';
 import {JwtModule} from "@auth0/angular-jwt";
 import {TestComponent} from './test/test.component';
@@ -35,6 +35,10 @@ import {
 import {RouterModule} from '@angular/router';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
+import {ForbiddenComponent} from './forbidden/forbidden.component';
+import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
+import {InterceptorService} from "./service/interceptor.service";
 
 
 @NgModule({
@@ -50,6 +54,9 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     TestComponent,
     FirebaseUploadComponent,
+    TestChuyenTrangComponent,
+    ForbiddenComponent,
+    ErrorNotFoundComponent,
   ],
   imports: [
     MatChipsModule,
@@ -74,7 +81,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatOptionModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [InterceptorService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule {
