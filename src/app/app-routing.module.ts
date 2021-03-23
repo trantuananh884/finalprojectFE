@@ -10,6 +10,7 @@ import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.compone
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
+import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
   {path:'text',
@@ -34,6 +35,10 @@ const routes: Routes = [
     component:TestComponent},
   {path:'firebase',
     component:FirebaseUploadComponent},
+  {
+    path:"profile/:id",
+    component:TestChuyenTrangComponent
+  },
   {path:'blogadmin',
     component:AdminBlogDisplayComponent}
 ];

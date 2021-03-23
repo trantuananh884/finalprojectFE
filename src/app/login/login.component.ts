@@ -3,7 +3,7 @@ import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 // import {JwtService} from "../service/jwt.service";
 
 import {Router} from "@angular/router";
-import {JwtService} from '../jwt.service';
+import {JwtService} from '../service/jwt.service';
 // import any = jasmine.any;
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {JwtService} from "../jwt.service";
+import {JwtService} from "../service/jwt.service";
 
 @Component({
   selector: 'app-register',
