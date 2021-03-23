@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import {Blog} from '../model/blog';
+import {Tag} from '../model/tag';
 
 class Fruit {
   name?:string
@@ -12,42 +14,31 @@ class Fruit {
   styleUrls: ['./display-blog.component.css']
 })
 export class DisplayBlogComponent {
+  blog?:Blog ={
+    tags : "blog,bloghub"
+  }
+  tagsarray?:string[]
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  fruits: Fruit[] = [
-    {name: 'Lemon'},
-    {name: 'Lime'},
-    {name: 'Apple'},
+  tag:Tag={}
+  tags: Tag[] = [
+
   ];
 
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
 
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
-    }
 
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-  }
-
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
-
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
-    }
-  }
   constructor() { }
 
   ngOnInit(): void {
+    this.tagsarray = this.blog.tags.split(",")
+    for (let i = 0; i < this.tagsarray.length; i++) {
+      this.tag.name =this.tagsarray[i];
+      this.tags.push(this.tag);
+    }
+
   }
 
 
