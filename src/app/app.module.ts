@@ -35,13 +35,17 @@ import {
 import {RouterModule} from '@angular/router';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
-import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
-import {ForbiddenComponent} from './forbidden/forbidden.component';
-import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
-import {InterceptorService} from "./service/interceptor.service";
+
+// import {ForbiddenComponent} from './forbidden/forbidden.component';
+// import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
+// import {InterceptorService} from "./service/interceptor.service";
 import { TagDisplayComponent } from './tag-display/tag-display.component';
 import { AdminBlogDisplayComponent } from './admin-blog-display/admin-blog-display.component';
 import {MatCardModule} from '@angular/material/card';
+import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
+import {ForbiddenComponent} from './forbidden/forbidden.component';
+import {InterceptorService} from './service/interceptor.service';
+// import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
@@ -59,7 +63,7 @@ import {MatCardModule} from '@angular/material/card';
     FirebaseUploadComponent,
     TagDisplayComponent,
     AdminBlogDisplayComponent,
-    TestChuyenTrangComponent,
+    // TestChuyenTrangComponent,
     ForbiddenComponent,
     ErrorNotFoundComponent,
   ],

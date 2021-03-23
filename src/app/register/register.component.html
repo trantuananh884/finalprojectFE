@@ -1,6 +1,32 @@
-<form [formGroup]="registerForm">
-  <input type="text" placeholder="username" formControlName="username">
-  <input type="text" placeholder="password" formControlName="password">
-  <input type="text" placeholder="email" formControlName="email">
-  <button (click)="register()" >dang ky</button>
-</form>
+<div class="container">
+  <div class="row" style="margin-top: 10%; text-align: center">
+    <h1 style="font-weight: bold">Register</h1>
+    <form class="register" [formGroup]="registerForm">
+      <div>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Password" formControlName="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <br>
+        <div>
+          <button mat-raised-button color="primary" (click)="register()">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
