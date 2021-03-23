@@ -12,7 +12,6 @@ class Fruit {
   styleUrls: ['./display-blog.component.css']
 })
 export class DisplayBlogComponent {
-
   visible = true;
   selectable = true;
   removable = true;

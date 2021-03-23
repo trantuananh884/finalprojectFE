@@ -1,20 +1,20 @@
 <app-toolbar></app-toolbar>
 <form class="title-form">
-  <mat-form-field class="example-full-width">
+  <mat-form-field  class="example-full-width" >
     <mat-label>Input your blog title here</mat-label>
-    <input matInput placeholder="Ex:Manchester United">
+    <input matInput placeholder="Ex:Manchester United" #input1 [(ngModel)]="title" name="title">
   </mat-form-field>
-  <button class="button"><span class="material-icons md-48">send</span>POST</button>
+  <button (click)="createBlog()" class="button"><span class="material-icons md-48">send</span>POST</button>
 </form>
 <p>Choose your thumbnail picture</p>
-<app-firebase-upload></app-firebase-upload>
+<app-firebase-upload (firebaseImageUrl)="getImageUrl($event)"></app-firebase-upload>
 <mat-form-field appearance="outline" class="description">
   <mat-label>Input your description here</mat-label>
-  <input matInput placeholder="description...">
+  <input matInput placeholder="description..." #input2 [(ngModel)]="shortDescription" name="shortDescription  " >
 </mat-form-field>
-<mat-form-field appearance="fill">
+<mat-form-field  appearance="fill">
   <mat-label>Privacy</mat-label>
-  <mat-select>
+  <mat-select [(value)]="privacy">
     <mat-option value="true">
       Public
     </mat-option>
@@ -23,19 +23,5 @@
     </mat-option>
   </mat-select>
 </mat-form-field>
-<mat-form-field class="example-chip-list">
-  <mat-label>Tags</mat-label>
-  <mat-chip-list #chipList aria-label="Fruit selection">
-    <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
-              [removable]="removable" (removed)="remove(tag)">
-      {{tag.name}}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip>
-    <input placeholder="New tag..."
-           [matChipInputFor]="chipList"
-           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-           [matChipInputAddOnBlur]="addOnBlur"
-           (matChipInputTokenEnd)="add($event)">
-  </mat-chip-list>
-</mat-form-field>
-<app-texteditor></app-texteditor>
+<app-tag-display (tagArrayEmit)="getTagArray($event)"></app-tag-display>
+<app-texteditor (dataFromTexteditor)="getContentFromTexteditor($event)"></app-texteditor>

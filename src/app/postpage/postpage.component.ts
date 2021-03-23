@@ -3,6 +3,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Tag} from '../model/tag';
 import {Blog} from '../model/blog';
+import {FormControl, FormGroup} from '@angular/forms';
 
 
 
@@ -12,42 +13,52 @@ import {Blog} from '../model/blog';
   styleUrls: ['./postpage.component.css']
 })
 export class PostpageComponent implements OnInit {
-  blog:Blog;
-  visible = true;
-  selectable = true;
-  removable = true;
-  addOnBlur = true;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  tags: Tag[] = [
-    {name: 'Blog'},
-    {name: 'BlogHub'},
-
-  ];
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.tags.push({name: value.trim()});
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
-  }
-
-  remove(tag: Tag): void {
-    const index = this.tags.indexOf(tag);
-
-    if (index >= 0) {
-      this.tags.splice(index, 1);
-      console.log(this.tags)
-    }
-  }
+  blog?:Blog= {
+  };
+  title?: string
+  previewImageURL?:string
+  shortDescription?: string
+  privacy?: boolean = true
+  tags?:string =""
+  content?:string
   constructor() { }
+
+  titleform = new FormControl(''
+  )
 
   ngOnInit(): void {
   }
+
+  getImageUrl(url) {
+    this.previewImageURL = url;
+  }
+
+  getTagArray(tags :Tag [] ){
+    this.tags ="";
+    for (let i = 0; i < tags.length; i++) {
+      this.tags = this.tags  +tags[i].name + ",";
+    }
+    this.tags = this.tags.slice(0,this.tags.length-1)
+  }
+
+  getContentFromTexteditor(content:string) {
+    this.content = content;
+  }
+
+  createBlog() {
+    // this.blog = {
+    //   title: this.title,
+    // }
+    this.blog.title = this.title
+    this.blog.content = this.content
+    this.blog.previewImageURL = this.previewImageURL
+    this.blog.tags = this.tags
+    this.blog.privacy = this.privacy
+    this.blog.shortDescription = this.shortDescription
+    console.log(this.blog)
+
+  }
+
+
 
 }

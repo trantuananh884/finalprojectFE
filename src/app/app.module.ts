@@ -35,6 +35,7 @@ import {
 import {RouterModule} from '@angular/router';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { TagDisplayComponent } from './tag-display/tag-display.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {MatSelectModule} from '@angular/material/select';
     RegisterComponent,
     TestComponent,
     FirebaseUploadComponent,
+    TagDisplayComponent,
   ],
   imports: [
     MatChipsModule,

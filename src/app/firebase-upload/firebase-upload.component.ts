@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFireStorage} from '@angular/fire/storage';
 import {finalize} from 'rxjs/operators';
@@ -9,7 +9,7 @@ import {finalize} from 'rxjs/operators';
   styleUrls: ['./firebase-upload.component.css']
 })
 export class FirebaseUploadComponent {
-
+  @Output() firebaseImageUrl = new EventEmitter();
   title = "cloudsSorage";
   selectedFile: File = null;
   fb;
@@ -31,6 +31,7 @@ export class FirebaseUploadComponent {
             if (url) {
               this.fb = url;
             }
+            this.firebaseImageUrl.emit(url);
             console.log(this.fb);
           });
         })
@@ -38,6 +39,7 @@ export class FirebaseUploadComponent {
       .subscribe(url => {
         if (url) {
           console.log(url);
+
         }
       });
   }
