@@ -9,6 +9,7 @@ import {TestComponent} from './test/test.component';
 import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
+import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
 
 const routes: Routes = [
   {path:'text',
@@ -32,7 +33,9 @@ const routes: Routes = [
   {path:'test',
     component:TestComponent},
   {path:'firebase',
-    component:FirebaseUploadComponent}
+    component:FirebaseUploadComponent},
+  {path:'blogadmin',
+    component:AdminBlogDisplayComponent}
 ];
 
 @NgModule({

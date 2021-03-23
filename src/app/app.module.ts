@@ -36,6 +36,8 @@ import {RouterModule} from '@angular/router';
 import {MatOptionModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { TagDisplayComponent } from './tag-display/tag-display.component';
+import { AdminBlogDisplayComponent } from './admin-blog-display/admin-blog-display.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { TagDisplayComponent } from './tag-display/tag-display.component';
     TestComponent,
     FirebaseUploadComponent,
     TagDisplayComponent,
+    AdminBlogDisplayComponent,
   ],
   imports: [
     MatChipsModule,
@@ -74,7 +77,8 @@ import { TagDisplayComponent } from './tag-display/tag-display.component';
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
