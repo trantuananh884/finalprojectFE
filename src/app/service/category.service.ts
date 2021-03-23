@@ -4,7 +4,7 @@ import {environment} from "../../environments/environment";
 import {Observable} from "rxjs";
 import {Category} from "../model/category";
 
-const API_URL = `${environment.apiUrl}`;
+const API_URL = `${environment.apiURL}`;
 
 @Injectable({
   providedIn: 'root'

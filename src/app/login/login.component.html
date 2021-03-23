@@ -1,0 +1,46 @@
+<div style="margin-top: 10%">
+  <h1 style="font-weight: bold">Login</h1>
+  <form [formGroup]="loginForm">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+    <div>
+      <section class="example-section" style="margin-bottom: 1%">
+        <label for="remember">Remember</label>
+        <input id="remember" type="checkbox" (change)="checkRememberMe($event)">
+      </section>
+      <!--        <mat-checkbox class="example-margin">Remember me!</mat-checkbox>-->
+
+      <button mat-raised-button color="primary" (click)="login()">Login</button>
+    </div>
+    <br>
+    <div>
+      <p>Or Login with</p>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" type="button" class="waves-light" style="width: 10%"><i
+        class="fab fa-facebook-f left"></i>Facebook
+      </button>
+      <button mat-raised-button color="warn" type="button" class="waves-light" style="width: 10%"><i
+        class="fab fa-google-plus left"></i>Google
+      </button>
+    </div>
+  </form>
+</div>
+
+<!--<input type="text" placeholder="username" formControlName="username">-->
+<!--<div><p *ngIf="loginForm.controls['username'].hasError('required')" style="color:red">trường này bắt buộc nhập</p>-->
+<!--</div>-->
+<!--<div><p *ngIf="loginForm.controls['username'].hasError('minlength')" style="color:red">độ dài input > 3</p></div>-->
+<!--<br>-->
+<!--rememberme :-->
+<!--<input type="checkbox" (change)="checkRememberMe($event)">-->
+<!--<button (click)="login()">dang nhap</button>-->
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {JwtService} from "../service/jwt.service";
 
 @Component({
   selector: 'app-toolbar',
@@ -6,10 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-
-  constructor() { }
+  rememeberMe? : string;
+  username? : string;
+  userId? : string;
+  constructor(private jwtService : JwtService) { }
 
   ngOnInit(): void {
+    this.rememeberMe = this.jwtService.loggedIn;
+    if (this.rememeberMe === "loggedNotRemember"){
+      this.getUserNameInCookie();
+      this.getUserIdInCookie();
+    }else if (this.rememeberMe === "loggedAndRemember"){
+      this.getUsernameInLocalStorage();
+      this.getUserIdInLocalStorage();
+    }
   }
 
+  getUserNameInCookie() {
+    this.username = this.jwtService.getUserNameInSession();
+  }
+
+  getUserIdInCookie(){
+    this.userId = this.jwtService.getUserIdInSession();
+  }
+
+  private getUsernameInLocalStorage() {
+    this.username = this.jwtService.getUserIdInLocalStorage();
+  }
+
+  private getUserIdInLocalStorage() {
+    this.userId = this.jwtService.getUserIdInLocalStorage();
+  }
 }

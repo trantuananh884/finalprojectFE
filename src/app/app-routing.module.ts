@@ -4,10 +4,12 @@ import {TexteditorComponent} from './texteditor/texteditor.component';
 import {MainNavComponent} from './main-nav/main-nav.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
 import {PostpageComponent} from './postpage/postpage.component';
-import {CategoryListComponent} from "./category-list/category-list.component";
-import {CategoryUpdateComponent} from "./category-update/category-update.component";
-import {CategoryCreateComponent} from "./category-create/category-create.component";
-import {UserListComponent} from "./user-list/user-list.component";
+// import {DisplayBlogComponent} from './display-blog/display-blog.component';
+import {TestComponent} from './test/test.component';
+import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
+import {LoginComponent} from "./login/login.component";
+import {RegisterComponent} from "./register/register.component";
+import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
   {
@@ -26,23 +28,30 @@ const routes: Routes = [
     path: 'titlebar',
     component: PostpageComponent
   },
+  // {
+  //   path: 'display',
+  //   component: DisplayBlogComponent
+  // },
   {
-    path: 'categories',
-    component: CategoryListComponent
+    path: "login",
+    component: LoginComponent
   },
   {
-    path: 'categories/create',
-    component: CategoryCreateComponent
+    path: "register",
+    component: RegisterComponent
   },
   {
-    path: 'categories/:id',
-    component: CategoryUpdateComponent
+    path: 'test',
+    component: TestComponent
   },
   {
-    path: 'users',
-    component: UserListComponent
+    path: 'firebase',
+    component: FirebaseUploadComponent
+  },
+  {
+    path: "profile/:id",
+    component: TestChuyenTrangComponent
   }
-
 ];
 
 @NgModule({
