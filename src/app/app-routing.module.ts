@@ -31,7 +31,7 @@ const routes: Routes = [
     component: ToolbarComponent
   },
   {
-    path: 'titlebar',
+    path: 'post',
     component: PostpageComponent
   },
   {
@@ -79,7 +79,7 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "index",
+    path: "",
     component: IndexComponent
   }
 ];
