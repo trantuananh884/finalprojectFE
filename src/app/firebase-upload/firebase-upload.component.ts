@@ -14,6 +14,7 @@ export class FirebaseUploadComponent {
   selectedFile: File = null;
   fb;
   downloadURL: Observable<string>;
+  link: any;
   constructor( private storage: AngularFireStorage) {}
   ngOnInit() {}
   onFileSelected(event) {

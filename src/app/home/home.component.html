@@ -1,0 +1,36 @@
+<app-toolbar></app-toolbar>
+<table>
+  <tr>
+    <td>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Search Blog</mat-label>
+          <input matInput placeholder="Ex. Blog" value="">
+        </mat-form-field>
+      </form>
+    </td>
+
+
+    <td>
+      <button style="margin-right: 10px" type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              matTooltip="Delete this blog"
+      >
+        <span><mat-icon>search</mat-icon></span>
+      </button>
+    </td>
+  </tr>
+</table>
+<div style="width: 30%; height: 800px; background: aquamarine; float: left"></div>
+<div style="width: 36%; margin-left: 2%; float: left">
+  <app-thumbnail-display ></app-thumbnail-display>
+  <app-thumbnail-display ></app-thumbnail-display>
+</div>
+
+<div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
+
+  <app-thumb-nail-display-right></app-thumb-nail-display-right>
+  <app-thumb-nail-display-right></app-thumb-nail-display-right>
+  <app-thumb-nail-display-right></app-thumb-nail-display-right>
+</div>

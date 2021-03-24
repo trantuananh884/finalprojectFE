@@ -49,6 +49,7 @@ import { LogoutComponent } from './logout/logout.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display.component';
 import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
+import { HomeComponent } from './home/home.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -73,6 +74,7 @@ import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb
     LogoutComponent,
     ThumbnailDisplayComponent,
     ThumbNailDisplayRightComponent,
+    HomeComponent,
   ],
   imports: [
     MatChipsModule,
