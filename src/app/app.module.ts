@@ -68,7 +68,7 @@ import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
-
+    Nosani,
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
