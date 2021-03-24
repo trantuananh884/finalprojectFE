@@ -50,6 +50,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display.component';
 import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
 import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -75,6 +76,7 @@ import { HomeComponent } from './home/home.component';
     ThumbnailDisplayComponent,
     ThumbNailDisplayRightComponent,
     HomeComponent,
+    IndexComponent,
   ],
   imports: [
     MatChipsModule,

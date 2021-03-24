@@ -14,6 +14,7 @@ import {LogoutComponent} from "./logout/logout.component";
 import {ThumbnailDisplayComponent} from './thumbnail-display/thumbnail-display.component';
 import {ThumbNailDisplayRightComponent} from './thumb-nail-display-right/thumb-nail-display-right.component';
 import {HomeComponent} from './home/home.component';
+import {IndexComponent} from './index/index.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
+  },
+  {
+    path: "index",
+    component: IndexComponent
   }
 ];
 
