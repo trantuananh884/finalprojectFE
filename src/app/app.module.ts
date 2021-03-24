@@ -60,12 +60,14 @@ import { CategoryUpdateComponent } from './category/category-update/category-upd
 import { UserListComponent } from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { UserInforComponent } from './user/user-infor/user-infor.component';
+import {Nosani} from './nosani';
+
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-
+Nosani,
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -91,6 +93,7 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
+
   ],
   imports: [
     MatChipsModule,
@@ -120,7 +123,8 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,

@@ -1,6 +1,6 @@
 <app-toolbar></app-toolbar>
 <div [innerHTML]="blog.title"></div>
-<div [innerHTML]="blog.content"></div>
+<div [innerHTML]="blog.content | noSanitize"></div>
 <div [innerHTML]="blog.createdAt"></div>
 <mat-form-field class="example-chip-list">
   <mat-label>Tags</mat-label>
