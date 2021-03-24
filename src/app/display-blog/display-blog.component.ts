@@ -26,9 +26,8 @@ export class DisplayBlogComponent {
 
   ngOnInit(): void {
     const id = this.getIdURL();
-    console.log(id + "id")
+    console.log(2)
     this.blogService.getBlog(id).subscribe(res=>{
-      console.log(res)
       this.blog = res.data;
       this.tags = this.getTag(this.blog.tags)
     },error => {
