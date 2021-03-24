@@ -1,5 +1,10 @@
 <div style="margin-top: 10%">
   <h1 style="font-weight: bold">Login</h1>
+  <div>
+    <div *ngIf="errorMessage">
+      <p style="color: red">{{errorMessage}}</p>
+    </div>
+  </div>
   <form [formGroup]="loginForm">
     <mat-form-field>
       <mat-label>Username</mat-label>

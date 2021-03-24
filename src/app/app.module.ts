@@ -60,6 +60,7 @@ import { CategoryUpdateComponent } from './category/category-update/category-upd
 import { UserListComponent } from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { UserInforComponent } from './user/user-infor/user-infor.component';
+import { LikeComponent } from './like/like.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -91,6 +92,7 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
+    LikeComponent,
   ],
   imports: [
     MatChipsModule,

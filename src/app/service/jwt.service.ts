@@ -33,6 +33,7 @@ export class JwtService {
         sessionStorage.setItem('userId', res.id)
       }
     }, error => {
+      console.log("a")
       console.log(error)
     }));
   }
