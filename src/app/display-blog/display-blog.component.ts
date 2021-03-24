@@ -3,6 +3,8 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Blog} from '../model/in/Blog';
 import {Tag} from '../model/tag';
+import {BlogService} from '../service/blog.service';
+import {ActivatedRoute} from '@angular/router';
 
 class Fruit {
   name?:string
@@ -14,35 +16,32 @@ class Fruit {
   styleUrls: ['./display-blog.component.css']
 })
 export class DisplayBlogComponent {
-  blog?:Blog ={
-    tags : "blog,bloghub"
-  }
-  tagsarray?:string[]
-  visible = true;
-  selectable = true;
-  removable = true;
-  addOnBlur = true;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  tag:Tag={}
-  tags: Tag[] = [
-
-  ];
+  blog?:Blog;
+  tagsarray?:string[];
+  tags:String[];
 
 
 
-  constructor() { }
+  constructor(private blogService : BlogService,private activeRoute : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.tagsarray = this.blog.tags.split(",")
-    for (let i = 0; i < this.tagsarray.length; i++) {
-      this.tag.name =this.tagsarray[i];
-      this.tags.push(this.tag);
-    }
+    const id = this.getIdURL();
+    console.log(id + "id")
+    this.blogService.getBlog(id).subscribe(res=>{
+      console.log(res)
+      this.blog = res.data;
+      this.tags = this.getTag(this.blog.tags)
+    },error => {
+      console.log(error)
+    })
+  }
 
+  getTag(tags : string){
+    return tags.split(",");
   }
 
 
-
-
-
+  private getIdURL() {
+    return this.activeRoute.snapshot.params['id'];
+  }
 }

@@ -1,10 +1,12 @@
 <app-toolbar></app-toolbar>
-<div></div>
+<div [innerHTML]="blog.title"></div>
+<div >{{blog.content}}</div>
+<div [innerHTML]="blog.createdAt"></div>
 <mat-form-field class="example-chip-list">
   <mat-label>Tags</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">
     <mat-chip *ngFor="let tag of tags" >
-      {{tag.name}}
+      {{tag}}
 
     </mat-chip>
   </mat-chip-list>
