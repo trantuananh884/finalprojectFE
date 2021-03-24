@@ -83,10 +83,4 @@ export class JwtService {
     return sessionStorage.getItem('userId');
   }
 
-
-  // register(userSignUp : UserSignUp) {
-  //   return this.httpClient.post<{access_token: string}>(`${API_URL}/register`, {userSignUp}).pipe(tap(res => {
-  //     this.login(email, password)
-  //   }))
-  // }
 }

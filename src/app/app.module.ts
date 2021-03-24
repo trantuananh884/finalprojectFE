@@ -22,7 +22,7 @@ import {DisplayBlogComponent} from './display-blog/display-blog.component';
 import {LoginComponent} from './login/login.component';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {RegisterComponent} from './register/register.component';
-import {JwtModule} from "@auth0/angular-jwt";
+import {JwtHelperService, JwtModule} from "@auth0/angular-jwt";
 import {TestComponent} from './test/test.component';
 import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.component';
 import {AngularFireModule} from "@angular/fire";
@@ -39,28 +39,30 @@ import {MatSelectModule} from '@angular/material/select';
 // import {ForbiddenComponent} from './forbidden/forbidden.component';
 // import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 // import {InterceptorService} from "./service/interceptor.service";
-import { TagDisplayComponent } from './tag-display/tag-display.component';
-import { AdminBlogDisplayComponent } from './admin-blog-display/admin-blog-display.component';
+import {TagDisplayComponent} from './tag-display/tag-display.component';
+import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
 import {MatCardModule} from '@angular/material/card';
 import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
-import { LogoutComponent } from './logout/logout.component';
+import {LogoutComponent} from './logout/logout.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display.component';
-import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
-import { HomeComponent } from './home/home.component';
-import { IndexComponent } from './index/index.component';
-import { CategoryListComponent } from './category/category-list/category-list.component';
+import {ThumbnailDisplayComponent} from './thumbnail-display/thumbnail-display.component';
+import {ThumbNailDisplayRightComponent} from './thumb-nail-display-right/thumb-nail-display-right.component';
+import {HomeComponent} from './home/home.component';
+import {IndexComponent} from './index/index.component';
+import {CategoryListComponent} from './category/category-list/category-list.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import { CategoryCreateComponent } from './category/category-create/category-create.component';
-import { CategoryUpdateComponent } from './category/category-update/category-update.component';
-import { UserListComponent } from './user/user-list/user-list.component';
+import {CategoryCreateComponent} from './category/category-create/category-create.component';
+import {CategoryUpdateComponent} from './category/category-update/category-update.component';
+import {UserListComponent} from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { UserInforComponent } from './user/user-infor/user-infor.component';
-import { LikeComponent } from './like/like.component';
+import {UserInforComponent} from './user/user-infor/user-infor.component';
+import {LikeComponent} from './like/like.component';
+import {AuthGuard} from "./service/auth.guard";
+
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -122,13 +124,14 @@ import { LikeComponent } from './like/like.component';
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
-  }],
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
