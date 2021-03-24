@@ -45,12 +45,20 @@ import {MatCardModule} from '@angular/material/card';
 import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import { CategoryUpdateComponent } from './category/category-update/category-update.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { UserInforComponent } from './user/user-infor/user-infor.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -66,6 +74,11 @@ import {InterceptorService} from './service/interceptor.service';
     // TestChuyenTrangComponent,
     ForbiddenComponent,
     ErrorNotFoundComponent,
+    CategoryListComponent,
+    CategoryCreateComponent,
+    CategoryUpdateComponent,
+    UserListComponent,
+    UserInforComponent,
   ],
   imports: [
     MatChipsModule,
@@ -89,7 +102,11 @@ import {InterceptorService} from './service/interceptor.service';
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     MatOptionModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSlideToggleModule
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
