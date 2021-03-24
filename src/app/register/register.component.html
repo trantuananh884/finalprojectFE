@@ -1,6 +1,12 @@
+
 <div class="container">
   <div class="row" style="margin-top: 10%; text-align: center">
     <h1 style="font-weight: bold">Register</h1>
+    <div>
+    <div *ngIf="message">
+      <p style="color : red">{{message}}</p>
+    </div>
+    </div>
     <form class="register" [formGroup]="registerForm">
       <div>
         <mat-form-field>
@@ -15,12 +21,12 @@
         <br>
         <mat-form-field>
           <mat-label>Password</mat-label>
-          <input matInput placeholder="Password" formControlName="password">
+          <input matInput placeholder="Password" formControlName="password" type="password">
         </mat-form-field>
         <br>
         <mat-form-field>
           <mat-label>Confirm Password</mat-label>
-          <input matInput placeholder="Password" formControlName="password">
+          <input matInput placeholder="Password" formControlName="confirmPassword" type="password">
         </mat-form-field>
         <br>
         <div>

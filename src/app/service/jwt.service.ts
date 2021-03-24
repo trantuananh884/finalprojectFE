@@ -4,6 +4,8 @@ import {tap} from "rxjs/operators";
 import {environment} from "../../environments/environment";
 import {UserSignUp} from "../model/out/UserSignUp";
 import {UserLogin} from "../model/out/UserLogin";
+import {Observable} from "rxjs";
+import {SystemResponse} from "../model/response/SystemResponse";
 
 
 const API_URL = `${environment.apiURL}`
@@ -35,8 +37,8 @@ export class JwtService {
     }));
   }
 
-  register(userSignUp: UserSignUp) {
-    return this.httpClient.post<{ access_token: string }>(`${API_URL}/register`, userSignUp).pipe(tap(res => {
+  register(userSignUp: UserSignUp): Observable<SystemResponse> {
+    return this.httpClient.post<SystemResponse>(`${API_URL}register`, userSignUp).pipe(tap(res => {
         console.log(res)
       }, error => {
         console.log(error)

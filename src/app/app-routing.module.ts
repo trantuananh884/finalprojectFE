@@ -16,6 +16,7 @@ import {CategoryUpdateComponent} from "./category/category-update/category-updat
 import {UserListComponent} from "./user/user-list/user-list.component";
 import {UserInforComponent} from "./user/user-infor/user-infor.component";
 import {IndexComponent} from './index/index.component';
+import {LogoutComponent} from "./logout/logout.component";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: '',
     component: IndexComponent
+  },
+  {
+    path : "logout",
+    component : LogoutComponent
   }
 
 ];
