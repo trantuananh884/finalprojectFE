@@ -3,7 +3,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {UserService} from "../../service/user.service";
 import {MatTableDataSource} from "@angular/material/table";
-import {SystemResponse} from "../../model/SystemResponse";
+import {SystemResponse} from "../../model/response/SystemResponse";
 import {Role} from "../../model/Role";
 import {AccountOut} from "../../model/Account-out";
 

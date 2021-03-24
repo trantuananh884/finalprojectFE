@@ -15,6 +15,7 @@ import {CategoryCreateComponent} from "./category/category-create/category-creat
 import {CategoryUpdateComponent} from "./category/category-update/category-update.component";
 import {UserListComponent} from "./user/user-list/user-list.component";
 import {UserInforComponent} from "./user/user-infor/user-infor.component";
+import {IndexComponent} from './index/index.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path: 'profile/:id',
     component: UserInforComponent
+  },
+  {
+    path: '',
+    component: IndexComponent
   }
 
 ];

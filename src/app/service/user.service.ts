@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 import firebase from "firebase";
 import User = firebase.User;
 import {AccountOut} from "../model/Account-out";
-import {SystemResponse} from "../model/SystemResponse";
+import {SystemResponse} from "../model/response/SystemResponse";
 
 const API_URL = `${environment.apiURL}`;
 

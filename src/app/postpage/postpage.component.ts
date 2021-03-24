@@ -6,6 +6,7 @@ import {Blog} from '../model/blog';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from "../service/category.service";
 import {Category} from "../model/category";
+import {BlogService} from '../service/blog.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class PostpageComponent implements OnInit {
   tags?: string = ""
   content?: string
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService, private blogService: BlogService) {
   }
 
   titleForm = new FormControl('')
@@ -56,14 +57,21 @@ export class PostpageComponent implements OnInit {
     this.blog.tags = this.tags
     this.blog.privacy = this.privacy
     this.blog.shortDescription = this.shortDescription
+    console.log(this.categoryId);
+    console.log(this.blog.categoryId = this.categoryId)
+    if (this.categoryId + "" == "undefined"){
+      this.categoryId = 1;
+    }
     this.blog.categoryId = this.categoryId;
-    console.log(this.blog)
+    this.blogService.addBLog(this.blog).subscribe(res =>{
+      console.log(res)
+    },error => {console.log(error)})
   }
 
   getCategory() {
     this.categoryService.getAll().subscribe(value => {
-      // @ts-ignore
-      this.categories = value.data;
+
+      // this.categories = value.value
     });
   }
 }
