@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import {TexteditorComponent} from './texteditor/texteditor.component';
 import {MainNavComponent} from './main-nav/main-nav.component';
 import {ToolbarComponent} from './toolbar/toolbar.component';
@@ -10,11 +10,11 @@ import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.compone
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
-import {LogoutComponent} from "./logout/logout.component";
-import {ThumbnailDisplayComponent} from './thumbnail-display/thumbnail-display.component';
-import {ThumbNailDisplayRightComponent} from './thumb-nail-display-right/thumb-nail-display-right.component';
-import {HomeComponent} from './home/home.component';
-import {IndexComponent} from './index/index.component';
+import {CategoryListComponent} from "./category/category-list/category-list.component";
+import {CategoryCreateComponent} from "./category/category-create/category-create.component";
+import {CategoryUpdateComponent} from "./category/category-update/category-update.component";
+import {UserListComponent} from "./user/user-list/user-list.component";
+import {UserInforComponent} from "./user/user-infor/user-infor.component";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -31,7 +31,7 @@ const routes: Routes = [
     component: ToolbarComponent
   },
   {
-    path: 'post',
+    path: 'titlebar',
     component: PostpageComponent
   },
   {
@@ -43,8 +43,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: "register",
-    component: RegisterComponent
+    path:"register",
+    component:RegisterComponent
   },
   {
     path: 'test',
@@ -63,30 +63,30 @@ const routes: Routes = [
     component: AdminBlogDisplayComponent
   },
   {
-    path: "logout",
-    component: LogoutComponent
+    path: 'categories',
+    component: CategoryListComponent
   },
   {
-    path: "thumbnail",
-    component: ThumbnailDisplayComponent
+    path: 'categories/create',
+    component: CategoryCreateComponent
   },
   {
-    path: "thumbnailright",
-    component: ThumbNailDisplayRightComponent
+    path: 'categories/:id',
+    component: CategoryUpdateComponent
   },
   {
-    path: "home",
-    component: HomeComponent
+    path: 'profile',
+    component: UserListComponent
   },
   {
-    path: "",
-    component: IndexComponent
+    path: 'profile/:id',
+    component: UserInforComponent
   }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

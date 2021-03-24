@@ -1,0 +1,14 @@
+<h2>Update Category</h2>
+<div style="text-align: center">
+  <form [formGroup]="categoryForm" (submit)="updateCategory(category.id)">
+    <mat-form-field appearance="fill" style="width: 500px">
+
+      <mat-label>Name</mat-label>
+      <input matInput style="width: 500px" formControlName="name">
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" type="reset">Reset</button>
+    </div>
+  </form>
+</div>

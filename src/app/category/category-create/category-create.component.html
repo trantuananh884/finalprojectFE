@@ -1,0 +1,13 @@
+<h2>Create Category</h2>
+<div style="text-align: center">
+  <form [formGroup]="categoryForm" (submit)="submit()">
+    <mat-form-field appearance="fill" style="width: 500px">
+      <mat-label>Name</mat-label>
+      <input matInput style="width: 500px" formControlName="name" >
+    </mat-form-field>
+    <div class="example-button-row">
+      <button mat-raised-button color="primary">Create</button>
+      <button mat-raised-button color="danger" type="reset">Reset</button>
+    </div>
+  </form>
+</div>

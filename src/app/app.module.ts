@@ -51,6 +51,15 @@ import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display
 import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
+import { CategoryListComponent } from './category/category-list/category-list.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { CategoryCreateComponent } from './category/category-create/category-create.component';
+import { CategoryUpdateComponent } from './category/category-update/category-update.component';
+import { UserListComponent } from './user/user-list/user-list.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import { UserInforComponent } from './user/user-infor/user-infor.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
@@ -72,6 +81,11 @@ import { IndexComponent } from './index/index.component';
     // TestChuyenTrangComponent,
     ForbiddenComponent,
     ErrorNotFoundComponent,
+    CategoryListComponent,
+    CategoryCreateComponent,
+    CategoryUpdateComponent,
+    UserListComponent,
+    UserInforComponent,
     LogoutComponent,
     ThumbnailDisplayComponent,
     ThumbNailDisplayRightComponent,
@@ -100,6 +114,11 @@ import { IndexComponent } from './index/index.component';
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
     MatOptionModule,
     MatSelectModule,
+    MatCardModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatSlideToggleModule,
     MatCardModule,
     MatTooltipModule
   ],
