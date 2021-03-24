@@ -1,4 +1,4 @@
-export interface BlogUpdateIn{
+export interface BlogUpdateOut{
   title? : any;
   content? : any;
   shortDescription? : any;
