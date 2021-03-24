@@ -62,12 +62,13 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { UserInforComponent } from './user/user-infor/user-infor.component';
 import {Nosani} from './nosani';
 
+import { LikeComponent } from './like/like.component';
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-Nosani,
+
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -93,6 +94,7 @@ Nosani,
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
+    LikeComponent,
 
   ],
   imports: [
@@ -123,8 +125,7 @@ Nosani,
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule,
-
+    MatTooltipModule
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
