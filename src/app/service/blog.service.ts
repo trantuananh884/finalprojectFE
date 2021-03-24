@@ -19,8 +19,8 @@ export class BlogService {
   constructor(private httpClient: HttpClient) {
   }
 
-  addBLog(blog: Blog): Observable<BlogIn> {
-    return this.httpClient.post<BlogIn>(`${API_URL}blogs`, blog);
+  addBLog(blog: Blog): Observable<SystemResponse> {
+    return this.httpClient.post<SystemResponse>(`${API_URL}blogs`, blog);
   }
 
   // updateBlog(blog : )

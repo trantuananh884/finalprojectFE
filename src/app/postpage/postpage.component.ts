@@ -7,6 +7,8 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from "../service/category.service";
 import {Category} from "../model/category";
 import {BlogService} from '../service/blog.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {BlogAddOut} from '../model/out/BlogAddOut';
 
 
 @Component({
@@ -15,9 +17,9 @@ import {BlogService} from '../service/blog.service';
   styleUrls: ['./postpage.component.css']
 })
 export class PostpageComponent implements OnInit {
-  blog?: Blog = {};
+  blog?: BlogAddOut = {};
   categories?: Category[];
-  categoryId?: number;
+  categoryId?: any;
   title?: string
   previewImageURL?: string
   shortDescription?: string
@@ -25,7 +27,7 @@ export class PostpageComponent implements OnInit {
   tags?: string = ""
   content?: string
 
-  constructor(private categoryService: CategoryService, private blogService: BlogService) {
+  constructor(private categoryService: CategoryService, private blogService: BlogService,private router : Router) {
   }
 
   titleForm = new FormControl('')
@@ -58,20 +60,26 @@ export class PostpageComponent implements OnInit {
     this.blog.privacy = this.privacy
     this.blog.shortDescription = this.shortDescription
     console.log(this.categoryId);
-    console.log(this.blog.categoryId = this.categoryId)
+    console.log(this.blog.idCategory = this.categoryId)
     if (this.categoryId + "" == "undefined"){
       this.categoryId = 1;
     }
-    this.blog.categoryId = this.categoryId;
+    this.blog.idCategory = this.categoryId;
+    console.log(this.blog)
     this.blogService.addBLog(this.blog).subscribe(res =>{
-      console.log(res)
+      let blogIn : Blog = res.data;
+      this.router.navigateByUrl(`blogs/${blogIn.id}`)
     },error => {console.log(error)})
   }
 
   getCategory() {
+    console.log(1)
     this.categoryService.getAll().subscribe(value => {
+        this.categories = value.data;
+        console.log(value)
 
-      // this.categories = value.value
+    },error => {
+      console.log(error);
     });
   }
 }

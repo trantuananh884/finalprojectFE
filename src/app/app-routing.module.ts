@@ -36,7 +36,7 @@ const routes: Routes = [
     component: PostpageComponent
   },
   {
-    path: 'display',
+    path: 'blogs/:id',
     component: DisplayBlogComponent
   },
   {

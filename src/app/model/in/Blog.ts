@@ -6,7 +6,7 @@ export interface Blog {
   previewImageURL?:string
   userId?:number
   createdAt?:any
-  categoryId?:number;
+  idCategory?:number;
   tags?:string;
   privacy?:boolean
   views?:number

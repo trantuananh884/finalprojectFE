@@ -3,6 +3,7 @@ import {environment} from "../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Category} from "../model/category";
+import {SystemResponse} from '../model/response/SystemResponse';
 
 const API_URL = `${environment.apiURL}`;
 
@@ -14,8 +15,9 @@ export class CategoryService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL + 'categories');
+  getAll(): Observable<SystemResponse> {
+    console.log(1)
+    return this.http.get<SystemResponse>(API_URL + 'categories');
   }
 
   createNewCategory(category: Category): Observable<Category> {
