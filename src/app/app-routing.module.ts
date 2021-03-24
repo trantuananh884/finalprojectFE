@@ -83,10 +83,10 @@ const routes: Routes = [
     path: 'profile/:id',
     component: UserInforComponent
   },
-  {
-    path: '',
-    component: IndexComponent
-  }
+  // {
+  //   path: '',
+  //   component: IndexComponent
+  // }
 
 ];
 

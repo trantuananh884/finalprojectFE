@@ -77,7 +77,6 @@ export class PostpageComponent implements OnInit {
     this.categoryService.getAll().subscribe(value => {
         this.categories = value.data;
         console.log(value)
-
     },error => {
       console.log(error);
     });

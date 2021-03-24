@@ -58,7 +58,7 @@ export class UserListComponent implements OnInit {
       }
       this.serviceUser.block(id, unlocked).subscribe(value => {
         console.log(value)
-        alert("User locked");
+        alert("User unlocked");
         this.getAll();
       })
     }else{
@@ -66,7 +66,7 @@ export class UserListComponent implements OnInit {
         locked: false
       }
       this.serviceUser.block(id, unlocked).subscribe(value => {
-        alert("User unlocked")
+        alert("User locked")
         this.getAll();
       })
     }
