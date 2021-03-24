@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {tap} from "rxjs/operators";
 import {environment} from "../../environments/environment";
-import {UserSignUp} from "../model/UserSignUp";
-import {UserLogin} from "../model/UserLogin";
+import {UserSignUp} from "../model/out/UserSignUp";
+import {UserLogin} from "../model/out/UserLogin";
 
 
 const API_URL = `${environment.apiURL}`

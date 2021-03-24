@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 // @ts-ignore
 import {BlogIn} from '../model/in/BlogIn';
 import {environment} from "../../environments/environment";
-import {Blog} from "../model/Blog";
+import {Blog} from "../model/in/Blog";
 import {SystemResponse} from "../model/response/SystemResponse";
 
 const API_URL = `${environment.apiURL}`

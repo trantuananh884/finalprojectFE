@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Tag} from '../model/tag';
-import {Blog} from '../model/blog';
+import {Blog} from '../model/in/Blog';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from "../service/category.service";
 import {Category} from "../model/category";
