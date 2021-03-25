@@ -23,6 +23,7 @@ import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import {ReclaimComponent} from "./reclaim/reclaim.component";
 import {UpdateBlogComponent} from './update-blog/update-blog.component';
+import {config} from "./ConfigRoles";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
   {
     path: 'titlebar',
     component: PostpageComponent,
-    canActivate : [AuthGuard]
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path: 'blogs/:id',
