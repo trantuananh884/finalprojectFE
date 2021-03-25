@@ -118,6 +118,10 @@ const routes: Routes = [
   {
     path: 'updateblog/:id',
     component: UpdateBlogComponent
+  },
+  {
+    path: 'reclaim/:token',
+    component: ReclaimComponent
   }
 
 ];
