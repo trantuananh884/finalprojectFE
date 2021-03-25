@@ -10,4 +10,5 @@ export interface Blog {
   tags?:string;
   privacy?:boolean
   views?:number
+  username?:string
 }

@@ -15,7 +15,7 @@
       <button style="margin-right: 10px" type="button"
               aria-label="Toggle sidenav"
               mat-icon-button
-              matTooltip="Delete this blog"
+              matTooltip="Search by title"
       >
         <span><mat-icon>search</mat-icon></span>
       </button>
@@ -33,21 +33,19 @@
   </div>
 <mat-paginator
 [length] ="this.blogs.length"
-[pageSize]="3"
-[pageSizeOptions]="[3,6,9]"
+[pageSize]="10"
+[pageSizeOptions]="[10,15,20]"
 (page)="OnPageChange($event)"
 ></mat-paginator>
 </div>
 
-<div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
+<div style="width: 30%; height: 600px; float: left; margin-left: 2%; margin-bottom: 1%;margin-top: 0%">
   <p style="text-align: center;font-weight: bold">Top 5 most viewed</p>
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5viewd" [blog]="blog"></app-thumb-nail-display-right>
-
 </div>
-<div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
+<div style="width: 30%; height: 600px; float: left; margin-left: 2%;margin-bottom: 2%; margin-top: 2%">
   <p style="font-weight: bold;text-align: center">Top 5 most liked</p>
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5liked"[blog]="blog"></app-thumb-nail-display-right>
-
 </div>
 </div>
 </div>
