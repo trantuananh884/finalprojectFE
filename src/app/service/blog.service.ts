@@ -26,7 +26,6 @@ export class BlogService {
   // updateBlog(blog : )
 
   getBlog(id : number) : Observable<SystemResponse>{
-    console.log(id);
     return this.httpClient.get<SystemResponse>(`${API_URL}blogs/${id}`);
   }
 }

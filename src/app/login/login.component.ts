@@ -22,9 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (sessionStorage.getItem('token') || sessionStorage.getItem('token')){
-      this.router.navigateByUrl("titlebar");
-    }
   }
 
   login() {

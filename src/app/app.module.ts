@@ -63,12 +63,16 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
 import {Nosani} from './nosani';
 
 import { LikeComponent } from './like/like.component';
+import {UserInforComponent} from './user/user-infor/user-infor.component';
+import {LikeComponent} from './like/like.component';
+import {AuthGuard} from "./service/auth.guard";
+
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-    Nosani,
+
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -95,7 +99,6 @@ import { LikeComponent } from './like/like.component';
     HomeComponent,
     IndexComponent,
     LikeComponent,
-
   ],
   imports: [
     MatChipsModule,
@@ -125,13 +128,14 @@ import { LikeComponent } from './like/like.component';
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
-  }],
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
