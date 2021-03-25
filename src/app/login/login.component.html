@@ -1,6 +1,9 @@
 <div style="margin-top: 10%">
   <h1 style="font-weight: bold">Login</h1>
   <div class="row">
+    <div *ngIf="errorMessage">
+      <p style="color: red">{{errorMessage}}</p>
+    </div>
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <form [formGroup]="loginForm">
@@ -40,15 +43,22 @@
         <div>
           <p>Or Login with</p>
         </div>
-        <div>
-          <button mat-raised-button color="primary" type="button" class="waves-light">
-            <i class="fab fa-facebook-f left"></i>Facebook
-          </button>
-          <button mat-raised-button color="warn" type="button" class="waves-light">
-            <i class="fab fa-google-plus left"></i>Google
-          </button>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <button mat-raised-button color="primary" type="button" class="waves-light">
+                <i class="fab fa-facebook-f left"></i>Facebook
+              </button>
+              <button mat-raised-button color="warn" type="button" class="waves-light">
+                <i class="fab fa-google-plus left"></i>Google
+              </button>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
         </div>
       </form>
+      <a routerLink="/register">Register</a>
     </div>
     <div class="col-md-4"></div>
   </div>
@@ -73,12 +83,14 @@
               <div class="text-center">
                 <p>If you have forgotten your password you can reset it here.</p>
                 <div class="panel-body">
-                  <fieldset>
-                    <div class="form-group">
-                      <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
-                    </div>
-                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
-                  </fieldset>
+                  <form [formGroup]="emailForm">
+                    <fieldset>
+                      <div class="form-group">
+                        <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email" formControlName="email">
+                      </div>
+                      <input class="btn btn-lg btn-primary btn-block" value="Send My Email" type="submit" (click)="sendEmail()">
+                    </fieldset>
+                  </form>
                 </div>
               </div>
             </div>
@@ -87,7 +99,7 @@
       </div>
       <div class="modal-footer">
         <div class="col-md-12">
-          <button class="btn btn-danger"  data-dismiss="modal" aria-hidden="true">Cancel</button>
+          <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
         </div>
       </div>
     </div>

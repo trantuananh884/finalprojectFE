@@ -6,9 +6,12 @@ import {UserSignUp} from "../model/out/UserSignUp";
 import {UserLogin} from "../model/out/UserLogin";
 import {Observable} from "rxjs";
 import {SystemResponse} from "../model/response/SystemResponse";
+import {Email} from "../model/email";
+import {UserPasswordIn} from "../model/in/UserPasswordIn";
 
 
 const API_URL = `${environment.apiURL}`
+
 
 @Injectable({
   providedIn: 'root'
@@ -65,6 +68,15 @@ export class JwtService {
       return "loggedAndRemember";
     }
     return "notLogged";
+  }
+
+  sendEmail(email: Email){
+    return this.httpClient.post<Email>(API_URL + 'reclaim', email)
+  }
+
+  sendEmailPassword(token: string, userPasswordIn: UserPasswordIn) : Observable<SystemResponse>{
+    console.log(userPasswordIn)
+    return this.httpClient.post<SystemResponse>(API_URL + `reclaim/${token}`,userPasswordIn);
   }
 
   public getUserNameInLocalStorage() {

@@ -4,6 +4,8 @@ import {FormControl, FormGroup, NgForm, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {JwtService} from '../service/jwt.service';
+import {Email} from "../model/email";
+
 // import any = jasmine.any;
 
 @Component({
@@ -17,7 +19,13 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(3)])
   });
   rememberMe?: any;
-  errorMessage? : any
+  errorMessage?: any;
+
+  emailForm = new FormGroup({
+    email: new FormControl(''),
+  });
+
+
   constructor(private jwtService: JwtService, private router: Router) {
   }
 
@@ -25,7 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.jwtService.login(this.loginForm.value,this.rememberMe).subscribe(() => {
+    this.jwtService.login(this.loginForm.value, this.rememberMe).subscribe(() => {
       this.router.navigateByUrl("titlebar")
     }, error => {
       this.errorMessage = error.error;
@@ -39,6 +47,15 @@ export class LoginComponent implements OnInit {
     } else {
       this.rememberMe = false;
     }
+  }
 
+
+  sendEmail() {
+    this.jwtService.sendEmail(this.emailForm.value).subscribe(() => {
+      console.log(this.emailForm.value)
+      this.router.navigateByUrl("login")
+    }, error => {
+      this.errorMessage = error.errorMessage;
+    })
   }
 }
