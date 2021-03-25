@@ -59,10 +59,10 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
 import { CategoryUpdateComponent } from './category/category-update/category-update.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { UserInforComponent } from './user/user-infor/user-infor.component';
+// import { UserInforComponent } from './user/user-infor/user-infor.component';
 import {Nosani} from './nosani';
 
-import { LikeComponent } from './like/like.component';
+// import { LikeComponent } from './like/like.component';
 import {UserInforComponent} from './user/user-infor/user-infor.component';
 import {LikeComponent} from './like/like.component';
 import {AuthGuard} from "./service/auth.guard";
@@ -72,7 +72,7 @@ import {AuthGuard} from "./service/auth.guard";
 
 @NgModule({
   declarations: [
-
+Nosani,
     AppComponent,
     TexteditorComponent,
     MainNavComponent,

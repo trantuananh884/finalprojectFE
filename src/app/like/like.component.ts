@@ -62,7 +62,9 @@ export class LikeComponent implements OnInit {
   }
 
   likeOrDislike() {
+    console.log(1);
     const id = this.getPathvariable();
+
     this.likeService.likeOrDislike({isLiked: true}, id).subscribe(res => {
       this.youLiked = !this.youLiked;
     }, error => {
