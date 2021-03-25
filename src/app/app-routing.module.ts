@@ -14,6 +14,7 @@ import {IndexComponent} from './index/index.component';
 import {LogoutComponent} from "./logout/logout.component";
 import {AuthGuard} from "./service/auth.guard";
 import {HomeComponent} from './home/home.component';
+import {MainNavUserComponent} from './main-nav-user/main-nav-user.component';
 import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
 import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
 import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
@@ -107,6 +108,10 @@ const routes: Routes = [
   {
     path: 'admin/profile',
     component: UserListComponent
+  },
+  {
+    path : "usermng",
+    component : MainNavUserComponent
   }
 
 ];
