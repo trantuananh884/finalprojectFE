@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-texteditor',
@@ -7,7 +7,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class TexteditorComponent implements OnInit {
   title = 'tinymcedemo';
-  data?: string;
+  @Input() data?: string;
   @Output() dataFromTexteditor = new EventEmitter()
   tinymceinit: any;
   constructor() {

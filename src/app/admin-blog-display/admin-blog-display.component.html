@@ -62,7 +62,9 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" >
                         aria-label="Toggle sidenav"
                         mat-icon-button
                         matTooltip="Update this blog"
+                        routerLink="/updateblog/{{blog.id}}"
                 >
+                  <app-postpage *ngIf="false" [blogtoupdate]="blog"></app-postpage>
                   <span><mat-icon>update</mat-icon></span>
 
                 </button>

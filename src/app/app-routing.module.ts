@@ -22,6 +22,7 @@ import {UserListComponent} from "./admin/user/user-list/user-list.component";
 import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import {ReclaimComponent} from "./reclaim/reclaim.component";
+import {UpdateBlogComponent} from './update-blog/update-blog.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -31,8 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: MainNavComponent,
-    canActivate : [AuthGuard]
+    component: MainNavComponent
   },
   {
     path: 'bar',
@@ -73,18 +73,15 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoryListComponent,
-    canActivate : [AuthGuard],
+    component: CategoryListComponent
   },
   {
     path: 'categories/create',
-    component: CategoryCreateComponent,
-    canActivate : [AuthGuard]
+    component: CategoryCreateComponent
   },
   {
     path: 'categories/:id',
-    component: CategoryUpdateComponent,
-    canActivate : [AuthGuard]
+    component: CategoryUpdateComponent
   },
   {
     path: 'profile',
@@ -92,8 +89,7 @@ const routes: Routes = [
   },
   {
     path: 'profile/:id',
-    component: UserInfoComponent,
-    canActivate : [AuthGuard]
+    component: UserInfoComponent
   },
   {
     path: '',
@@ -101,8 +97,7 @@ const routes: Routes = [
   },
   {
     path : "logout",
-    component : LogoutComponent,
-    canActivate : [AuthGuard]
+    component : LogoutComponent
   },
   {
     path : "home",
@@ -110,21 +105,19 @@ const routes: Routes = [
   },
   {
     path: 'admin/blogs',
-    component:  BlogListComponent,
-    canActivate : [AuthGuard]
+    component:  BlogListComponent
   },
   {
     path: 'admin/profile',
-    component: UserListComponent,
-    canActivate : [AuthGuard]
+    component: UserListComponent
   },
   {
     path : "usermng",
     component : MainNavUserComponent
   },
   {
-    path: 'reclaim/:token',
-    component: ReclaimComponent
+    path: 'updateblog/:id',
+    component: UpdateBlogComponent
   }
 
 ];

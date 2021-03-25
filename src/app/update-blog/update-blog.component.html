@@ -1,0 +1,35 @@
+<app-toolbar></app-toolbar>
+<form class="title-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Input your blog title here</mat-label>
+    <input matInput placeholder="Ex:Manchester United" #input1 [(ngModel)]="title" name="title">
+  </mat-form-field>
+  <button (click)="updateBlog()" class="button"><span class="material-icons md-48">send</span>UPDATE</button>
+</form>
+<p>Choose your thumbnail picture</p>
+<app-firebase-upload (firebaseImageUrl)="getImageUrl($event)"></app-firebase-upload>
+<mat-form-field appearance="outline" class="description">
+  <mat-label>Input your description here</mat-label>
+  <input matInput placeholder="description..." #input2 [(ngModel)]="shortDescription" name="shortDescription  ">
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Privacy</mat-label>
+  <mat-select [(value)]="privacy">
+    <mat-option  value="true">
+      Public
+    </mat-option>
+    <mat-option  value="false">
+      Private
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field style="margin-left: 5%" appearance="fill" >
+  <mat-label>Category</mat-label>
+  <mat-select [(value)]="idCategory">
+    <mat-option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-tag-display (tagArrayEmit)="getTagArray($event)"></app-tag-display>
+<app-texteditor (dataFromTexteditor)="getContentFromTexteditor($event)" [data]="content"></app-texteditor>

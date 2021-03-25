@@ -69,7 +69,8 @@ import {UserListComponent} from "./admin/user/user-list/user-list.component";
 import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import { MainNavUserComponent } from './main-nav-user/main-nav-user.component';
-import { ReclaimComponent } from './reclaim/reclaim.component';
+import { UpdateBlogComponent } from './update-blog/update-blog.component';
+import {ReclaimComponent} from "./reclaim/reclaim.component";
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -107,6 +108,7 @@ Nosani,
     ShareGmailComponent,
     MainNavUserComponent,
     Nosani,
+    UpdateBlogComponent,
     ReclaimComponent,
   ],
   imports: [
