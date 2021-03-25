@@ -21,6 +21,7 @@ import {CategoryUpdateComponent} from "./admin/category/category-update/category
 import {UserListComponent} from "./admin/user/user-list/user-list.component";
 import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
+import {ReclaimComponent} from "./reclaim/reclaim.component";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: MainNavComponent
+    component: MainNavComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'bar',
@@ -71,15 +73,18 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate : [AuthGuard],
   },
   {
     path: 'categories/create',
-    component: CategoryCreateComponent
+    component: CategoryCreateComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'categories/:id',
-    component: CategoryUpdateComponent
+    component: CategoryUpdateComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'profile',
@@ -87,7 +92,8 @@ const routes: Routes = [
   },
   {
     path: 'profile/:id',
-    component: UserInfoComponent
+    component: UserInfoComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: '',
@@ -95,7 +101,8 @@ const routes: Routes = [
   },
   {
     path : "logout",
-    component : LogoutComponent
+    component : LogoutComponent,
+    canActivate : [AuthGuard]
   },
   {
     path : "home",
@@ -103,15 +110,21 @@ const routes: Routes = [
   },
   {
     path: 'admin/blogs',
-    component:  BlogListComponent
+    component:  BlogListComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'admin/profile',
-    component: UserListComponent
+    component: UserListComponent,
+    canActivate : [AuthGuard]
   },
   {
     path : "usermng",
     component : MainNavUserComponent
+  },
+  {
+    path: 'reclaim/:token',
+    component: ReclaimComponent
   }
 
 ];
