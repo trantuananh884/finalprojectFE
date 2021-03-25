@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../service/user.service";
+import {UserService} from "../../../service/admin/user.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {FormControl, FormGroup} from "@angular/forms";
 import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-user-infor',
-  templateUrl: './user-infor.component.html',
-  styleUrls: ['./user-infor.component.css']
+  templateUrl: './user-info.component.html',
+  styleUrls: ['./user-info.component.css']
 })
-export class UserInforComponent implements OnInit {
+export class UserInfoComponent implements OnInit {
 
   account: any;
 

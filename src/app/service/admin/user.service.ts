@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import firebase from "firebase";
 import User = firebase.User;
-import {AccountOut} from "../model/Account-out";
-import {SystemResponse} from "../model/response/SystemResponse";
+import {AccountOut} from "../../model/Account-out";
+import {SystemResponse} from "../../model/response/SystemResponse";
 
 const API_URL = `${environment.apiURL}`;
 

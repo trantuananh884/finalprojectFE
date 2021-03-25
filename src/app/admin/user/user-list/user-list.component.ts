@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {UserService} from "../../service/user.service";
+import {UserService} from "../../../service/admin/user.service";
 import {MatTableDataSource} from "@angular/material/table";
-import {SystemResponse} from "../../model/response/SystemResponse";
-import {Role} from "../../model/Role";
-import {AccountOut} from "../../model/Account-out";
+import {SystemResponse} from "../../../model/response/SystemResponse";
+import {Role} from "../../../model/Role";
+import {AccountOut} from "../../../model/Account-out";
 
 @Component({
   selector: 'app-user-list',
@@ -16,7 +16,6 @@ export class UserListComponent implements OnInit {
   users: any;
   block: any;
   roleName: any;
-  checkBoolean: boolean;
   displayedColumns: string[] = ['id', 'username', 'firstname', 'lastname', 'email', 'role', 'locked', 'createdAt', 'actions'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
