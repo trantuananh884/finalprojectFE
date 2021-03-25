@@ -55,6 +55,7 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" >
                         aria-label="Toggle sidenav"
                         mat-icon-button
                         matTooltip="Delete this blog"
+                        (click)="delete(blog.id)"
                 >
                   <span><mat-icon>delete</mat-icon></span>
                 </button>
