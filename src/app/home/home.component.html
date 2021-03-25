@@ -1,3 +1,5 @@
+<div >
+<div>
 <app-toolbar></app-toolbar>
 <table>
   <tr>
@@ -9,8 +11,6 @@
         </mat-form-field>
       </form>
     </td>
-
-
     <td>
       <button style="margin-right: 10px" type="button"
               aria-label="Toggle sidenav"
@@ -22,7 +22,11 @@
     </td>
   </tr>
 </table>
-<div style="width: 30%; height: 800px; background: aquamarine; float: left"></div>
+<div  style="width: 20%; margin-left :5%;height: 800px; float: left">
+  <mat-button-toggle-group name="fontStyle" style="width: 100%;border: none" vertical aria-label="Font Style">
+    <mat-button-toggle style="font-weight: bold"value="bold">Bold</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
 <div style="width: 36%; margin-left: 2%; float: left">
   <div>
   <app-thumbnail-display *ngFor="let blog of pageSlice" [blog]="blog"></app-thumbnail-display>
@@ -36,11 +40,14 @@
 </div>
 
 <div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
-  <p>Top 5 most viewed</p>
+  <p style="text-align: center;font-weight: bold">Top 5 most viewed</p>
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5viewd" [blog]="blog"></app-thumb-nail-display-right>
 
-</div><div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
-  <p>Top 5 most liked</p>
+</div>
+<div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
+  <p style="font-weight: bold;text-align: center">Top 5 most liked</p>
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5liked"[blog]="blog"></app-thumb-nail-display-right>
 
+</div>
+</div>
 </div>

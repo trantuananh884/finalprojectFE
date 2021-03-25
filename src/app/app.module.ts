@@ -71,6 +71,7 @@ import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import { MainNavUserComponent } from './main-nav-user/main-nav-user.component';
 import { UpdateBlogComponent } from './update-blog/update-blog.component';
 import {ReclaimComponent} from "./reclaim/reclaim.component";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -110,6 +111,7 @@ Nosani,
     Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
+
   ],
   imports: [
     MatChipsModule,
@@ -139,7 +141,8 @@ Nosani,
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonToggleModule
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
