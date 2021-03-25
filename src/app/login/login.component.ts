@@ -28,8 +28,7 @@ export class LoginComponent implements OnInit {
     this.jwtService.login(this.loginForm.value,this.rememberMe).subscribe(() => {
       this.router.navigateByUrl("titlebar")
     }, error => {
-      this.errorMessage = error;
-      console.log(this.errorMessage)
+      this.errorMessage = error.error;
     })
   }
 

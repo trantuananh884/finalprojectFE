@@ -5,23 +5,23 @@ box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
       <tr>
         <td rowspan="2" width="30%">
           <div class="previewimage"
-               style="background-image: url(https://th.bing.com/th/id/OIP.1DEojgxtXLMUK0TzvAR9MwHaFj?pid=ImgDet&rs=1)"></div>
+               [style]="style"></div>
         </td>
-        <td>title here</td>
+        <td>
+          <span style="font-weight: bold; font-size: x-large;cursor: pointer" routerLink="/blogs/{{blog.id}}">{{blog.title}}</span>
+          <br>
+          <span style="cursor: pointer" routerLink="/blogs/{{blog.id}}">{{blog.shortDescription}}</span>
+        </td>
 
       </tr>
       <tr>
         <td>
           <div align="right">
-            <button type="button"
-                    aria-label="Toggle sidenav"
-                    mat-icon-button
-                    matTooltip="See my profile"
-                    style="margin-right: 0px"
-            >
-              <span><mat-icon>person_pin</mat-icon></span>
-            </button>
-            <span style="margin-right: 0px">0</span>
+              <span>username</span>
+              <span><mat-icon matTooltip="User name">person_pin</mat-icon></span>
+            <span>100</span>
+            <mat-icon matTooltip="Like">thumb_up</mat-icon>
+            <span style="margin-right: 0px">{{blog.views}}</span>
             <mat-icon style="margin-right: 0px"
                       matTooltip="View"> bar_chart
             </mat-icon>

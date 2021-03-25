@@ -59,13 +59,21 @@ import { CategoryCreateComponent } from './category/category-create/category-cre
 import { CategoryUpdateComponent } from './category/category-update/category-update.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { UserInforComponent } from './user/user-infor/user-infor.component';
+// import { UserInforComponent } from './user/user-infor/user-infor.component';
+import {Nosani} from './nosani';
+
+// import { LikeComponent } from './like/like.component';
+import {UserInforComponent} from './user/user-infor/user-infor.component';
+import {LikeComponent} from './like/like.component';
+import {AuthGuard} from "./service/auth.guard";
+import { ShareGmailComponent } from './share-gmail/share-gmail.component';
+
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-
+Nosani,
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -91,6 +99,8 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
+    LikeComponent,
+    ShareGmailComponent,
   ],
   imports: [
     MatChipsModule,
@@ -120,13 +130,14 @@ import { UserInforComponent } from './user/user-infor/user-infor.component';
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule
+    MatTooltipModule,
+
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
-  }],
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

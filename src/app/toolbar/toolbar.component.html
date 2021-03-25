@@ -10,9 +10,9 @@
   <img class="logo" src="../../assets/image/Jaseowns_PH_Logo.png" alt="">
   <div class="space">
   </div>
-  <div *ngIf="rememeberMe === 'loggedNotRemember'">
+  <div *ngIf="rememeberMe === 'loggedNotRemember' || rememeberMe === 'loggedAndRemember'">
     <a routerLink="../profile/{{userId}}">{{username}}</a>
-    <a routerLink="../logout">logout</a>
+    <a routerLink="/logout">logout</a>
   </div>
 
   <ng-template #loggedOut>
