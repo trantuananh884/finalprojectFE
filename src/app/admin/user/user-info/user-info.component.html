@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2 style="text-align: center">Information Account</h2>
+    <div class="col" style="margin-left: 5px">
+      <a mat-raised-button routerLink="/admin/profile">Back</a>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</div>
+
+<div style="width: 100%;">
+  <table style="width: 40%; margin-left: 30%;">
+    <tr>
+      <td><b>Id</b></td>
+      <td>{{account.id}}</td>
+    </tr>
+    <tr>
+      <td><b>Username</b></td>
+      <td>{{account.username}}</td>
+    </tr>
+    <tr>
+      <td><b>Firstname</b></td>
+      <td>{{account.firstname}}</td>
+    </tr>
+    <tr>
+      <td><b>Lastname</b></td>
+      <td>{{account.lastname}}</td>
+    </tr>
+    <tr>
+      <td><b>Email</b></td>
+      <td>{{account.email}}</td>
+    </tr>
+    <tr>
+      <td><b>Avatar</b></td>
+      <td><img src="{{account.avatarURL}}" alt="Avatar" width="300px" height="200px"></td>
+    </tr>
+  </table>
+</div>
+

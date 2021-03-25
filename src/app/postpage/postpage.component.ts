@@ -4,7 +4,7 @@ import {MatChipInputEvent} from '@angular/material/chips';
 import {Tag} from '../model/tag';
 import {Blog} from '../model/in/Blog';
 import {FormControl, FormGroup} from '@angular/forms';
-import {CategoryService} from "../service/category.service";
+import {CategoryService} from "../service/admin/category.service";
 import {Category} from "../model/category";
 import {BlogService} from '../service/blog.service';
 import {ActivatedRoute, Router} from '@angular/router';

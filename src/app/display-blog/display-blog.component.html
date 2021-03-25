@@ -1,16 +1,39 @@
-
 <app-toolbar></app-toolbar>
-<app-like></app-like>
-<div [innerHTML]="blog.title"></div>
-<div [innerHTML]="blog.content | noSanitize"></div>
-<div [innerHTML]="blog.createdAt"></div>
-<div [innerHTML]="blog.views"></div>
+<div class="container">
+  <div class="row">
+    <app-like></app-like>
+    <div class="col-md-3">
+      <div><b>Title</b></div>
+      <br>
+      <div [innerHTML]="blog.title"></div>
+    </div>
+    <div class="col-md-3">
+      <div><b>Content</b></div>
+      <br>
+      <div [innerHTML]="blog.content | noSanitize"></div>
+    </div>
+    <div class="col-md-3">
+      <div><b>CreatedAt</b></div>
+      <br>
+      <div [innerHTML]="blog.createdAt"></div>
+    </div>
+    <div class="col-md-3">
+      <div><b>Views</b></div>
+      <br>
+      <div [innerHTML]="blog.views"></div>
+    </div>
+  </div>
+</div>
+<!--<div [innerHTML]="blog.title"></div>-->
+<!--<div [innerHTML]="blog.content | noSanitize"></div>-->
+<!--<div [innerHTML]="blog.createdAt"></div>-->
+<!--<div [innerHTML]="blog.views"></div>-->
+
 <mat-form-field class="example-chip-list">
   <mat-label>Tags</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">
-    <mat-chip *ngFor="let tag of tags" >
+    <mat-chip *ngFor="let tag of tags">
       {{tag}}
-
     </mat-chip>
   </mat-chip-list>
 </mat-form-field>

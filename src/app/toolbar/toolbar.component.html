@@ -1,18 +1,13 @@
 <mat-toolbar>
-  <button
-    class="material-icons md-48"
-    type="button"
-    aria-label="Toggle sidenav"
-    mat-icon-button
-  >
+  <button class="material-icons md-48" type="button" aria-label="Toggle sidenav" mat-icon-button>
     face
   </button>
   <img class="logo" src="../../assets/image/Jaseowns_PH_Logo.png" alt="">
   <div class="space">
   </div>
   <div *ngIf="rememeberMe === 'loggedNotRemember' || rememeberMe === 'loggedAndRemember'">
-    <a routerLink="../profile/{{userId}}">{{username}}</a>
-    <a routerLink="/logout">logout</a>
+    <a routerLink="/profile/{{userId}}">{{username}}</a>
+    <a routerLink="/logout">Logout</a>
   </div>
 
   <ng-template #loggedOut>

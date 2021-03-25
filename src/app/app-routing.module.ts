@@ -10,15 +10,16 @@ import {FirebaseUploadComponent} from './firebase-upload/firebase-upload.compone
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
-import {CategoryListComponent} from "./category/category-list/category-list.component";
-import {CategoryCreateComponent} from "./category/category-create/category-create.component";
-import {CategoryUpdateComponent} from "./category/category-update/category-update.component";
-import {UserListComponent} from "./user/user-list/user-list.component";
-import {UserInforComponent} from "./user/user-infor/user-infor.component";
 import {IndexComponent} from './index/index.component';
 import {LogoutComponent} from "./logout/logout.component";
 import {AuthGuard} from "./service/auth.guard";
 import {HomeComponent} from './home/home.component';
+import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
+import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
+import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
+import {UserListComponent} from "./admin/user/user-list/user-list.component";
+import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
+import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -85,7 +86,7 @@ const routes: Routes = [
   },
   {
     path: 'profile/:id',
-    component: UserInforComponent
+    component: UserInfoComponent
   },
   {
     path: '',
@@ -98,6 +99,14 @@ const routes: Routes = [
   {
     path : "home",
     component : HomeComponent
+  },
+  {
+    path: 'admin/blogs',
+    component:  BlogListComponent
+  },
+  {
+    path: 'admin/profile',
+    component: UserListComponent
   }
 
 ];

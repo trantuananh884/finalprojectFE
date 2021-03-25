@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Category} from "../../model/category";
+import {Category} from "../../../model/category";
 import {FormControl, FormGroup} from "@angular/forms";
-import {CategoryService} from "../../service/category.service";
+import {CategoryService} from "../../../service/admin/category.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({

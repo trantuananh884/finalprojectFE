@@ -51,29 +51,29 @@ import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display
 import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
-import { CategoryListComponent } from './category/category-list/category-list.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import { CategoryCreateComponent } from './category/category-create/category-create.component';
-import { CategoryUpdateComponent } from './category/category-update/category-update.component';
-import { UserListComponent } from './user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 // import { UserInforComponent } from './user/user-infor/user-infor.component';
 import {Nosani} from './nosani';
 
 // import { LikeComponent } from './like/like.component';
-import {UserInforComponent} from './user/user-infor/user-infor.component';
 import {LikeComponent} from './like/like.component';
 import {AuthGuard} from "./service/auth.guard";
 import { ShareGmailComponent } from './share-gmail/share-gmail.component';
+import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
+import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
+import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
+import {UserListComponent} from "./admin/user/user-list/user-list.component";
+import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
+import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-Nosani,
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -93,14 +93,16 @@ Nosani,
     CategoryCreateComponent,
     CategoryUpdateComponent,
     UserListComponent,
-    UserInforComponent,
+    UserInfoComponent,
     LogoutComponent,
+    BlogListComponent,
     ThumbnailDisplayComponent,
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
     LikeComponent,
     ShareGmailComponent,
+    Nosani,
   ],
   imports: [
     MatChipsModule,
@@ -130,8 +132,7 @@ Nosani,
     MatPaginatorModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTooltipModule,
-
+    MatTooltipModule
   ],
   providers: [InterceptorService, {
     provide: HTTP_INTERCEPTORS,
