@@ -31,7 +31,7 @@ blogs?:Blog[];
       this.getUsernameInLocalStorage();
       this.getUserIdInLocalStorage();
     }
-    this.blogService.getAllPublicBlogs().subscribe(res=>{
+    this.blogService.getPersonalBlogs().subscribe(res=>{
       this.blogs = res.data;
     })
   }

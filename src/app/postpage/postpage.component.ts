@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Tag} from '../model/tag';
@@ -17,9 +17,10 @@ import {BlogAddOut} from '../model/out/BlogAddOut';
   styleUrls: ['./postpage.component.css']
 })
 export class PostpageComponent implements OnInit {
+  @Input() blogtoupdate?:Blog
   blog?: BlogAddOut = {};
   categories?: Category[];
-  categoryId?: any;
+  idCategory?: any;
   title?: string
   previewImageURL?: string
   shortDescription?: string
@@ -34,6 +35,7 @@ export class PostpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategory();
+    console.log(this.blogtoupdate);
   }
 
   getImageUrl(url) {
@@ -59,12 +61,12 @@ export class PostpageComponent implements OnInit {
     this.blog.tags = this.tags
     this.blog.privacy = this.privacy
     this.blog.shortDescription = this.shortDescription
-    console.log(this.categoryId);
-    console.log(this.blog.idCategory = this.categoryId)
-    if (this.categoryId + "" == "undefined"){
-      this.categoryId = 1;
+    console.log(this.idCategory);
+    console.log(this.blog.idCategory = this.idCategory)
+    if (this.idCategory + "" == "undefined"){
+      this.idCategory = 1;
     }
-    this.blog.idCategory = this.categoryId;
+    this.blog.idCategory = this.idCategory;
     console.log(this.blog)
     this.blogService.addBLog(this.blog).subscribe(res =>{
       let blogIn : Blog = res.data;

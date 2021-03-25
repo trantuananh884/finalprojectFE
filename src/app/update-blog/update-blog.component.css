@@ -1,0 +1,21 @@
+.title-form {
+  display: inline-block;
+  min-width: 150px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 91%;
+}
+.button{
+  text-align: center;
+  display: inline-block;
+  right: 0px;
+}
+.example-chip-list{
+  width: 100%;
+}
+.description{
+  width: 100%;
+}
