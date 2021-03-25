@@ -66,6 +66,7 @@ import {Nosani} from './nosani';
 import {UserInforComponent} from './user/user-infor/user-infor.component';
 import {LikeComponent} from './like/like.component';
 import {AuthGuard} from "./service/auth.guard";
+import { ShareGmailComponent } from './share-gmail/share-gmail.component';
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -99,6 +100,7 @@ Nosani,
     HomeComponent,
     IndexComponent,
     LikeComponent,
+    ShareGmailComponent,
   ],
   imports: [
     MatChipsModule,
