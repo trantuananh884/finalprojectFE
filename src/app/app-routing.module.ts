@@ -18,6 +18,7 @@ import {UserInforComponent} from "./user/user-infor/user-infor.component";
 import {IndexComponent} from './index/index.component';
 import {LogoutComponent} from "./logout/logout.component";
 import {AuthGuard} from "./service/auth.guard";
+import {HomeComponent} from './home/home.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -93,6 +94,10 @@ const routes: Routes = [
   {
     path : "logout",
     component : LogoutComponent
+  },
+  {
+    path : "home",
+    component : HomeComponent
   }
 
 ];

@@ -20,7 +20,8 @@ export class ShareGmailComponent implements OnInit {
     window.open(url, 'sharer', 'toolbar=0,status=0,width=648,height=395');
   }
   shareFacebook(){
-    let url = "http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=Google&p%5Burl%5D=http%3A%2F%2Fwww.google.com&p%5Bsummary%5D=Google search engine&p%5Bimages%5D%5B0%5D=https://www.google.com/images/srpr/logo3w.png";
+    let body = "ProHub share + http://localhost:4200/" + this.router.url;
+    let url = "http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=Google&p%5Burl%5D=ch engine&p%5Bimages%5D%5B0%5D=" + body;
     window.open(url, 'sharer', 'toolbar=0,status=0,width=648,height=395');
   }
 }

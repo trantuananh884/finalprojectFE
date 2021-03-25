@@ -28,4 +28,8 @@ export class BlogService {
   getBlog(id : number) : Observable<SystemResponse>{
     return this.httpClient.get<SystemResponse>(`${API_URL}blogs/${id}`);
   }
+
+  getAllPublicBlogs() : Observable<SystemResponse>{
+    return this.httpClient.get<SystemResponse>(`${API_URL}blogs/`)
+  }
 }
