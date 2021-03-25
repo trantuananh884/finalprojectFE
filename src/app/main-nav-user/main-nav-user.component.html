@@ -1,0 +1,40 @@
+<mat-toolbar>
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="true">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <img class="logo" src="../../assets/image/Jaseowns_PH_Logo.png" alt="">
+  <div class="space">
+  </div>
+  <div *ngIf="rememeberMe === 'loggedNotRemember' || rememeberMe === 'loggedAndRemember'">
+    <a routerLink="../profile/{{userId}}">{{username}}</a>
+    <a routerLink="/logout">logout</a>
+  </div>
+
+  <ng-template #loggedOut>
+    Please friend, login.
+  </ng-template>
+</mat-toolbar>
+<mat-sidenav-container  class="sidenav-container">
+  <mat-sidenav cdk-scrollable #drawer class="sidenav" fixedInViewport ="false"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Manage my blogs</a>
+      <a mat-list-item href="#">Manage my profile</a>
+
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="margin-bottom: 5px">
+      <app-admin-blog-display *ngFor="let blog of blogs" [blog]="blog"></app-admin-blog-display>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

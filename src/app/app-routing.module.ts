@@ -19,6 +19,7 @@ import {IndexComponent} from './index/index.component';
 import {LogoutComponent} from "./logout/logout.component";
 import {AuthGuard} from "./service/auth.guard";
 import {HomeComponent} from './home/home.component';
+import {MainNavUserComponent} from './main-nav-user/main-nav-user.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -98,6 +99,10 @@ const routes: Routes = [
   {
     path : "home",
     component : HomeComponent
+  },
+  {
+    path : "usermng",
+    component : MainNavUserComponent
   }
 
 ];
