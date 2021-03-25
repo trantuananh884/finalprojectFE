@@ -39,36 +39,41 @@ import {MatSelectModule} from '@angular/material/select';
 // import {ForbiddenComponent} from './forbidden/forbidden.component';
 // import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 // import {InterceptorService} from "./service/interceptor.service";
-import {TagDisplayComponent} from './tag-display/tag-display.component';
-import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
+import { TagDisplayComponent } from './tag-display/tag-display.component';
+import { AdminBlogDisplayComponent } from './admin-blog-display/admin-blog-display.component';
 import {MatCardModule} from '@angular/material/card';
 import {ErrorNotFoundComponent} from './error-not-found/error-not-found.component';
 import {ForbiddenComponent} from './forbidden/forbidden.component';
 import {InterceptorService} from './service/interceptor.service';
-import {LogoutComponent} from './logout/logout.component';
+import { LogoutComponent } from './logout/logout.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {ThumbnailDisplayComponent} from './thumbnail-display/thumbnail-display.component';
-import {ThumbNailDisplayRightComponent} from './thumb-nail-display-right/thumb-nail-display-right.component';
-import {HomeComponent} from './home/home.component';
-import {IndexComponent} from './index/index.component';
-import {CategoryListComponent} from './admin/category/category-list/category-list.component';
+import { ThumbnailDisplayComponent } from './thumbnail-display/thumbnail-display.component';
+import { ThumbNailDisplayRightComponent } from './thumb-nail-display-right/thumb-nail-display-right.component';
+import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
-import {CategoryCreateComponent} from './admin/category/category-create/category-create.component';
-import {CategoryUpdateComponent} from './admin/category/category-update/category-update.component';
-import {UserListComponent} from './admin/user/user-list/user-list.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import {BlogListComponent} from './admin/blog/blog-list/blog-list.component';
+// import { UserInforComponent } from './user/user-infor/user-infor.component';
+import {Nosani} from './nosani';
+
+// import { LikeComponent } from './like/like.component';
+import {LikeComponent} from './like/like.component';
+import {AuthGuard} from "./service/auth.guard";
+import { ShareGmailComponent } from './share-gmail/share-gmail.component';
+import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
+import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
+import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
+import {UserListComponent} from "./admin/user/user-list/user-list.component";
 import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
-import { MainNavAdminComponent } from './admin/main-nav-admin/main-nav-admin.component';
+import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
 
 @NgModule({
   declarations: [
-
     AppComponent,
     TexteditorComponent,
     MainNavComponent,
@@ -88,15 +93,16 @@ import { MainNavAdminComponent } from './admin/main-nav-admin/main-nav-admin.com
     CategoryCreateComponent,
     CategoryUpdateComponent,
     UserListComponent,
+    UserInfoComponent,
     LogoutComponent,
+    BlogListComponent,
     ThumbnailDisplayComponent,
     ThumbNailDisplayRightComponent,
     HomeComponent,
     IndexComponent,
-    UserInfoComponent,
-    BlogListComponent,
-    MainNavAdminComponent,
-
+    LikeComponent,
+    ShareGmailComponent,
+    Nosani,
   ],
   imports: [
     MatChipsModule,
@@ -132,7 +138,7 @@ import { MainNavAdminComponent } from './admin/main-nav-admin/main-nav-admin.com
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
-  }],
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

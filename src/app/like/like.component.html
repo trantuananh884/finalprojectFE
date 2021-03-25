@@ -1,0 +1,9 @@
+<button *ngIf="youLiked" mat-icon-button color="warn" aria-label="Example icon button with a heart icon" (click)="likeOrDislike()">
+  <mat-icon >favorite</mat-icon>
+</button>
+<button *ngIf="!youLiked" mat-icon-button color="primary" aria-label="Example icon button with a heart icon" (click)="likeOrDislike()">
+  <mat-icon >favorite</mat-icon>
+</button>
+<b *ngIf="youLiked"> you and </b>
+<p *ngIf="likedNumber == 1">{{likedNumber}} person liked this blog</p>
+<p *ngIf="likedNumber != 1 && likedNumber > 0">{{likedNumber}} people liked this blog</p>

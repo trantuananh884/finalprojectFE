@@ -16,9 +16,6 @@ export class MainNavAdminComponent implements OnInit {
       map(result => result.matches),
       shareReplay()
     );
-
-  showProfile: boolean = false;
-
   constructor(private breakpointObserver: BreakpointObserver) {
   }
   ngOnInit(): void {

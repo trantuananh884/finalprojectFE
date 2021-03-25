@@ -48,7 +48,7 @@
           <th mat-header-cell *matHeaderCellDef style="text-align: center">Actions</th>
           <td mat-cell *matCellDef="let element" style="text-align: center">
             <a mat-raised-button style="margin-left: 1%"
-               routerLink="profile/{{element.id}}">Info</a>
+               routerLink="/profile/{{element.id}}">Info</a>
             <a mat-raised-button color="warn" style="margin-left: 1%"
                (click)="clickMethod(element.id)">Delete</a>
             <a *ngIf="!element.locked" mat-raised-button color="warn" (click)="clickBlock(element.id,true)"

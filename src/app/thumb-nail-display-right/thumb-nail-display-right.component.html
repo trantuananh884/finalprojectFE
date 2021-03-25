@@ -3,23 +3,22 @@
   <table style="width: 100%;">
     <tr>
       <td rowspan="2" width="30%">
-        <div class="previewimage" style="background-image: url(https://th.bing.com/th/id/OIP.1DEojgxtXLMUK0TzvAR9MwHaFj?pid=ImgDet&rs=1)"></div>
+        <div class="previewimage" [style]="style"></div>
       </td>
-      <td>title here</td>
+      <td style="font-weight: bold;font-size: x-large;cursor: pointer" routerLink="/blogs/{{blog.id}}">{{blog.title}}</td>
 
     </tr>
     <tr>
       <td>
         <div align="right">
-          <button type="button"
-                  aria-label="Toggle sidenav"
-                  mat-icon-button
-                  matTooltip="See my profile"
-                  style="margin-right: 0px"
-          >
-            <span><mat-icon>person_pin</mat-icon></span>
-          </button>
-          <span style="margin-right: 0px">0</span>
+          <span>user name</span>
+            <span><mat-icon matTooltip="User name">person_pin</mat-icon></span>
+          <span>0</span>
+          <span><mat-icon matTooltip="Like">thumb_up</mat-icon></span>
+
+          <span></span>
+
+          <span style="margin-right: 0px">{{blog.views}}</span>
           <mat-icon style="margin-right: 0px"
                     matTooltip="View"> bar_chart</mat-icon>
         </div>

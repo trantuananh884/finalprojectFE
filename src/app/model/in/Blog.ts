@@ -3,7 +3,7 @@ export interface Blog {
   title?:string
   content?:string
   shortDescription?:string
-  previewImageURL?:string
+  previewImageURl?:string
   userId?:number
   createdAt?:any
   idCategory?:number;

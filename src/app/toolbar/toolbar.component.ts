@@ -15,24 +15,24 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     this.rememeberMe = this.jwtService.loggedIn;
     if (this.rememeberMe === "loggedNotRemember"){
-      this.getUserNameInCookie();
-      this.getUserIdInCookie();
+      this.getUserNameInSession();
+      this.getUserIdInSession();
     }else if (this.rememeberMe === "loggedAndRemember"){
       this.getUsernameInLocalStorage();
       this.getUserIdInLocalStorage();
     }
   }
 
-  getUserNameInCookie() {
+  getUserNameInSession() {
     this.username = this.jwtService.getUserNameInSession();
   }
 
-  getUserIdInCookie(){
+  getUserIdInSession(){
     this.userId = this.jwtService.getUserIdInSession();
   }
 
   private getUsernameInLocalStorage() {
-    this.username = this.jwtService.getUserIdInLocalStorage();
+    this.username = this.jwtService.getUserNameInLocalStorage();
   }
 
   private getUserIdInLocalStorage() {
