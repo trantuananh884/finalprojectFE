@@ -4,6 +4,7 @@
 <div [innerHTML]="blog.title"></div>
 <div [innerHTML]="blog.content | noSanitize"></div>
 <div [innerHTML]="blog.createdAt"></div>
+<div [innerHTML]="blog.views"></div>
 <mat-form-field class="example-chip-list">
   <mat-label>Tags</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">

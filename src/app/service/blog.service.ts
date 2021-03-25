@@ -32,4 +32,8 @@ export class BlogService {
   getAllPublicBlogs() : Observable<SystemResponse>{
     return this.httpClient.get<SystemResponse>(`${API_URL}blogs/`)
   }
+  get5topviewed():Observable<SystemResponse>{
+    console.log(3222);
+    return this.httpClient.get<SystemResponse>(`${API_URL}blogs/topviews`)
+  }
 }
