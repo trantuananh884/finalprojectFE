@@ -71,8 +71,9 @@ import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import {MainNavUserComponent} from './main-nav-user/main-nav-user.component';
 import {UpdateBlogComponent} from './update-blog/update-blog.component';
 import {ReclaimComponent} from "./reclaim/reclaim.component";
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {CommentComponent} from "./comment/comment.component";
+import { CommentComponent } from './comment/comment.component';
+import {ProfileComponent} from "./profile-user/profile/profile.component";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -112,8 +113,8 @@ import {CommentComponent} from "./comment/comment.component";
     Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
-    CommentComponent,
-
+    ProfileComponent,
+    CommentComponent
   ],
   imports: [
     MatChipsModule,
@@ -150,7 +151,7 @@ import {CommentComponent} from "./comment/comment.component";
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
-  }, AuthGuard],
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

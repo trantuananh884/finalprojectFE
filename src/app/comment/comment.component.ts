@@ -5,6 +5,9 @@ import {CommentService} from "../service/comment.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CommentOut} from "../model/out/CommentOut";
 import {CommentIn} from "../model/in/CommentIn";
+
+// @ts-ignore
+import $ from "jquery";
 // import * as $ from 'jquery';
 @Component({
   selector: 'app-comment',
