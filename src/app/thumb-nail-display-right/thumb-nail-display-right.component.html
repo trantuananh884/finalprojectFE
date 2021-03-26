@@ -1,6 +1,8 @@
 
-<div style="background-color: #f8f8f8; width: 100%">
-  <table style="width: 100%;">
+<div style="background-color: #f8f8f8; width: 80%;margin-bottom: 5%"  >
+  <table style="width: 100%; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
     <tr>
       <td rowspan="2" width="30%">
         <div class="previewimage" [style]="style"></div>
@@ -11,10 +13,9 @@
     <tr>
       <td>
         <div align="right">
-          <span>user name</span>
+          <span>{{blog.username}}</span>
             <span><mat-icon matTooltip="User name">person_pin</mat-icon></span>
-          <span>0</span>
-          <span><mat-icon matTooltip="Like">thumb_up</mat-icon></span>
+
 
           <span></span>
 

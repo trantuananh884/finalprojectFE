@@ -51,4 +51,7 @@ export class BlogService {
     console.log(`${API_URL}blogs/search`)
     return this.httpClient.get<SystemResponse>(`${API_URL}blogs/search/${searchKey}`,);
   }
+get5topliked():Observable<SystemResponse>{
+  return this.httpClient.get<SystemResponse>(`${API_URL}blogs/toplikes`)
+}
 }

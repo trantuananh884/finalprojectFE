@@ -23,33 +23,28 @@
     </td>
   </tr>
 </table>
-<div style="width: 30%; height: 800px; background: aquamarine; float: left"></div>
+<div  style="width: 20%; margin-left :5%;height: 800px; float: left">
+  <mat-button-toggle-group name="fontStyle" style="width: 100%;border: none" vertical aria-label="Font Style">
+    <mat-button-toggle style="font-weight: bold"value="bold">Bold</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
 <div style="width: 36%; margin-left: 2%; float: left">
   <div>
-    <div *ngIf="displayDefault">
   <app-thumbnail-display *ngFor="let blog of pageSlice" [blog]="blog"></app-thumbnail-display>
-    </div>
-  </div>
-  <div>
-    <div *ngIf="displaySearch">
-      <app-thumbnail-display *ngFor="let blog of pageSlice" [blog]="blog"></app-thumbnail-display>
-    </div>
   </div>
 <mat-paginator
 [length] ="this.blogs.length"
-[pageSize]="10"
-[pageSizeOptions]="[10,15,20]"
+[pageSize]="5"
+[pageSizeOptions]="[5,10,15]"
 (page)="OnPageChange($event)"
 ></mat-paginator>
 </div>
 
-<div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
-  <p>Top 5 most viewed</p>
+<div style="width: 30%; height: 600px; float: left; margin-left: 2%; margin-bottom: 1%;margin-top: 0%">
+  <p style="text-align: center;font-weight: bold">Top 5 most viewed</p>
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5viewd" [blog]="blog"></app-thumb-nail-display-right>
-
-</div><div style="width: 30%; height: 800px; float: left; margin-left: 2%;">
-  <p>Top 5 most liked</p>
-  <app-thumb-nail-display-right *ngFor="let blog of blogtop5liked"[blog]="blog"></app-thumb-nail-display-right>
-
 </div>
-<a rhivoklof =rh></a>
+<div style="width: 30%; height: 600px; float: left; margin-left: 2%;margin-bottom: 2%; margin-top: 2%">
+  <p style="font-weight: bold;text-align: center">Top 5 most liked</p>
+  <app-thumb-nail-display-right *ngFor="let blog of blogtop5liked"[blog]="blog"></app-thumb-nail-display-right>
+</div>

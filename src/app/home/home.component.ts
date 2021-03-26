@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {BlogService} from '../service/blog.service';
 import {Blog} from '../model/in/Blog';
 import {PageEvent} from '@angular/material/paginator';
@@ -23,12 +23,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.blogService.getAllPublicBlogs().subscribe(res => {
       console.log(res)
+      this.blogs= res.data;
+      this.pageSlice= this.blogs.slice(0,5)
       this.blogs = res.data;
-      this.pageSlice = this.blogs.slice(0, 10)
+      this.pageSlice = this.blogs.slice(0, 5)
     })
     this.blogService.get5topviewed().subscribe(res => {
       this.blogtop5viewd = res.data;
       console.log(this.blogtop5viewd)
+    })
+    this.blogService.get5topliked().subscribe(res=>{
+      this.blogtop5liked=res.data;
+      console.log(this.blogtop5liked)
     })
   }
 

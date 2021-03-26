@@ -28,6 +28,7 @@ export class CategoryListComponent implements OnInit {
   getAll() {
     this.categoryService.getAll().subscribe(value => {
       this.categories = value;
+      console.log(this.categories)
       this.categories = new MatTableDataSource(this.categories.data);
       this.categories.paginator = this.paginator;
       this.categories.sort = this.sort;
