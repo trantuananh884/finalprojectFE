@@ -1,10 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AdminBlogService} from "../../../service/admin/admin-blog.service";
-import {MatTableModule} from "@angular/material/table";
-import {MatPaginator} from "@angular/material/paginator";
-import {MatSort} from "@angular/material/sort";
+import {MatTableDataSource, MatTableModule} from "@angular/material/table";
 import {Blog} from "../../../model/in/Blog";
 import {throwError} from "rxjs";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-blog-list',
@@ -13,8 +13,7 @@ import {throwError} from "rxjs";
 })
 export class BlogListComponent implements OnInit {
 
-  blogs: Blog[];
-  blogShow: any;
+  blogs: any;
 
   displayedColumns: string[] = ['id', 'title', 'shortDescription', 'createdAt', 'actions'];
 
@@ -28,14 +27,14 @@ export class BlogListComponent implements OnInit {
     this.getAll();
   }
 
-  getAll(){
-    this.adminBlogService.getAll().subscribe( value => {
-      this.blogs = value.data;
+  getAll() {
+    this.adminBlogService.getAll().subscribe(value => {
+      this.blogs = value;
       console.log(this.blogs)
       // @ts-ignore
-      this.blogShow = new MatTableModule(this.blogs);
-      this.blogShow.paginator = this.paginator;
-      this.blogShow.sort = this.sort;
+      this.blogs = new MatTableDataSource(this.blogs.data);
+      this.blogs.paginator = this.paginator;
+      this.blogs.sort = this.sort;
     }, error => {
       console.log(error);
     })
@@ -48,7 +47,4 @@ export class BlogListComponent implements OnInit {
     }
     this.getAll();
   }
-
-
-
 }

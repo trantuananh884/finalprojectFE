@@ -30,10 +30,10 @@ const routes: Routes = [
     path: 'text',
     component: TexteditorComponent
   },
-  {
-    path: 'admin',
-    component: MainNavComponent
-  },
+  // {
+  //   path: 'admin',
+  //   component: MainNavComponent
+  // },
   {
     path: 'bar',
     component: ToolbarComponent
@@ -72,23 +72,23 @@ const routes: Routes = [
     component: AdminBlogDisplayComponent
   },
   {
-    path: 'categories',
+    path: 'admin/categories',
     component: CategoryListComponent
   },
   {
-    path: 'categories/create',
+    path: 'admin/categories/create',
     component: CategoryCreateComponent
   },
   {
-    path: 'categories/:id',
+    path: 'admin/categories/:id',
     component: CategoryUpdateComponent
   },
   {
-    path: 'profile',
+    path: 'admin/profile',
     component: UserListComponent
   },
   {
-    path: 'profile/:id',
+    path: 'admin/profile/:id',
     component: UserInfoComponent
   },
   {
