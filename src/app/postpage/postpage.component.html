@@ -6,11 +6,12 @@
       <br>
       <h2>Post your blog</h2>
       <form class="title-form">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="p-3" style="width: 90%">
           <mat-label>Input your blog title here</mat-label>
           <input matInput placeholder="Ex:Manchester United" #input1 [(ngModel)]="title" name="title">
         </mat-form-field>
-        <button (click)="createBlog()" class="button"><span class="material-icons md-48">send</span>POST</button>
+        &ensp;&ensp;
+        <button (click)="createBlog()" class="btn"><span class="material-icons md-48">send</span>POST</button>
       </form>
       <p>Choose your thumbnail picture</p>
       <app-firebase-upload (firebaseImageUrl)="getImageUrl($event)"></app-firebase-upload>
