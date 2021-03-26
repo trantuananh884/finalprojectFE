@@ -32,10 +32,6 @@ const routes: Routes = [
     path: 'text',
     component: TexteditorComponent
   },
-  // {
-  //   path: 'admin',
-  //   component: MainNavComponent
-  // },
   {
     path: 'bar',
     component: ToolbarComponent
@@ -72,23 +68,33 @@ const routes: Routes = [
   },
   {
     path: 'admin/categories',
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: 'admin/categories/create',
-    component: CategoryCreateComponent
+    component: CategoryCreateComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: 'admin/categories/:id',
-    component: CategoryUpdateComponent
+    component: CategoryUpdateComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: 'admin/profile',
-    component: UserListComponent
+    component: UserListComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: 'admin/profile/:id',
-    component: UserInfoComponent
+    component: UserInfoComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: '',
@@ -100,15 +106,21 @@ const routes: Routes = [
   },
   {
     path : "home",
-    component : HomeComponent
+    component : HomeComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path: 'admin/blogs',
-    component:  BlogListComponent
+    component:  BlogListComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path: 'admin/profile',
-    component: UserListComponent
+    component: UserListComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.admin}
   },
   {
     path : "usermng",

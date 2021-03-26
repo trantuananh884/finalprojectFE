@@ -2,9 +2,14 @@
   <button class="material-icons md-48" type="button" aria-label="Toggle sidenav" mat-icon-button>
   </button>
   <a><img class="logo" src="../../assets/image/Jaseowns_PH_Logo.png" routerLink="/home"></a>
-
+  <a routerLink="/admin/categories" style="margin-left: 5%" *ngIf="isAdmin">Category</a>
+  <a routerLink="/admin/profile" style="margin-left: 5%" *ngIf="isAdmin">Profile</a>
+  <a routerLink="/profile" style="margin-left: 5%" *ngIf="!isAdmin">Profile</a>
+  <a routerLink="/admin/blogs" style="margin-left: 5%" *ngIf="isAdmin">Blogs</a>
+  <a routerLink="/usermng" style="margin-left: 5%" *ngIf="!isAdmin">Blogs</a>
   <div class="space">
   </div>
+
   <div *ngIf="rememeberMe === 'loggedNotRemember' || rememeberMe === 'loggedAndRemember'">
     <a routerLink="/profile/{{userId}}">{{username}}</a>
     <a routerLink="/logout">Logout</a>

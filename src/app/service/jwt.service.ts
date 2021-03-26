@@ -26,6 +26,7 @@ export class JwtService {
   login(userLogin: UserLogin, rememberMe: boolean) {
     console.log(userLogin)
     return this.httpClient.post<{ id: any, token: string, username: string, roles: Authority[] }>(`${API_URL}login`, userLogin).pipe(tap(res => {
+      console.log(res)
       if (rememberMe == true) {
         localStorage.setItem('token', res.token);
         localStorage.setItem('username', res.username);

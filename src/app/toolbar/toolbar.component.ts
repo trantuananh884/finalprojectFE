@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {JwtService} from "../service/jwt.service";
 
 @Component({
@@ -7,27 +7,39 @@ import {JwtService} from "../service/jwt.service";
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
-  rememeberMe? : string;
-  username? : string;
-  userId? : string;
-  constructor(private jwtService : JwtService) { }
+  rememeberMe?: string;
+  username?: string;
+  userId?: string;
+  isAdmin?: boolean;
+
+  constructor(private jwtService: JwtService) {
+  }
 
   ngOnInit(): void {
     this.rememeberMe = this.jwtService.loggedIn;
-    if (this.rememeberMe === "loggedNotRemember"){
+    if (this.rememeberMe === "loggedNotRemember") {
       this.getUserNameInSession();
       this.getUserIdInSession();
-    }else if (this.rememeberMe === "loggedAndRemember"){
+    } else if (this.rememeberMe === "loggedAndRemember") {
       this.getUsernameInLocalStorage();
       this.getUserIdInLocalStorage();
     }
+    this.getRoleUser();
+  }
+
+  getRoleUser() {
+    if (this.jwtService.getUserRoleInLocalStorage() == 'ADMIN' || this.jwtService.getUserRoleInSession() == "ADMIN") {
+      console.log(this.isAdmin)
+      this.isAdmin = true;
+    }
+
   }
 
   getUserNameInSession() {
     this.username = this.jwtService.getUserNameInSession();
   }
 
-  getUserIdInSession(){
+  getUserIdInSession() {
     this.userId = this.jwtService.getUserIdInSession();
   }
 

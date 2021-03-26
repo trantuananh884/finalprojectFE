@@ -50,9 +50,11 @@ export class CommentComponent implements OnInit {
   }
 
   getALlComment() {
-    console.log(this.activeRoute.snapshot.params['id'])
+    console.log(this.activeRoute.snapshot.params['id'] + "Aaaaaaaaaaaaaaaaaaaaa")
     this.commentService.getAllcomment(this.getPathvariable()).subscribe(res => {
+      console.log(res)
       this.allComments = res.data;
+      console.log(this.allComments)
     }, error => {
       console.log(error)
     })

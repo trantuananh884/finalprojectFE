@@ -34,7 +34,16 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.jwtService.login(this.loginForm.value, this.rememberMe).subscribe(() => {
-      this.router.navigateByUrl("titlebar")
+      console.log(this.jwtService.getUserRoleInLocalStorage())
+      console.log(this.jwtService.getUserRoleInSession())
+      console.log( this.jwtService.getUserRoleInSession() == 'MEMBER')
+      console.log(this.jwtService.getUserRoleInLocalStorage() == 'MEMBER')
+      if (this.jwtService.getUserRoleInLocalStorage() == 'MEMBER' || this.jwtService.getUserRoleInSession() == 'MEMBER' ){
+          this.router.navigateByUrl("home")
+      }else {
+        this.router.navigateByUrl("admin/blogs")
+      }
+
     }, error => {
       this.errorMessage = error.error;
     })
