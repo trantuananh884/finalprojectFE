@@ -71,6 +71,7 @@ import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import { MainNavUserComponent } from './main-nav-user/main-nav-user.component';
 import { UpdateBlogComponent } from './update-blog/update-blog.component';
 import {ReclaimComponent} from "./reclaim/reclaim.component";
+import { CommentComponent } from './comment/comment.component';
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -110,6 +111,7 @@ Nosani,
     Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
+    CommentComponent,
   ],
   imports: [
     MatChipsModule,
