@@ -12,8 +12,8 @@ export class TexteditorComponent implements OnInit {
   tinymceinit: any;
   constructor() {
     this.tinymceinit = {
-      height : 1000,
-      width : 800,
+      height : 600,
+      width : 954,
 
       plugins : [
         "advlist autolink lists link image charmap print preview hr anchor pagebreak",

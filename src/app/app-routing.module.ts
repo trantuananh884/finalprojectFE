@@ -24,6 +24,7 @@ import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import {ReclaimComponent} from "./reclaim/reclaim.component";
 import {UpdateBlogComponent} from './update-blog/update-blog.component';
 import {ProfileComponent} from "./profile-user/profile/profile.component";
+import {config} from "./ConfigRoles";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -31,10 +32,10 @@ const routes: Routes = [
     path: 'text',
     component: TexteditorComponent
   },
-  {
-    path: 'admin',
-    component: MainNavComponent
-  },
+  // {
+  //   path: 'admin',
+  //   component: MainNavComponent
+  // },
   {
     path: 'bar',
     component: ToolbarComponent
@@ -42,7 +43,8 @@ const routes: Routes = [
   {
     path: 'titlebar',
     component: PostpageComponent,
-    canActivate : [AuthGuard]
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path: 'blogs/:id',
@@ -73,19 +75,19 @@ const routes: Routes = [
     component: AdminBlogDisplayComponent
   },
   {
-    path: 'categories',
+    path: 'admin/categories',
     component: CategoryListComponent
   },
   {
-    path: 'categories/create',
+    path: 'admin/categories/create',
     component: CategoryCreateComponent
   },
   {
-    path: 'categories/:id',
+    path: 'admin/categories/:id',
     component: CategoryUpdateComponent
   },
   {
-    path: 'profile',
+    path: 'admin/profile',
     component: UserListComponent
   },
   {

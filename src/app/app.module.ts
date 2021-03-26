@@ -73,6 +73,7 @@ import { UpdateBlogComponent } from './update-blog/update-blog.component';
 import {ReclaimComponent} from "./reclaim/reclaim.component";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {ProfileComponent} from "./profile-user/profile/profile.component";
+import { CommentComponent } from './comment/comment.component';
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -112,7 +113,8 @@ Nosani,
     Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
-    ProfileComponent
+    ProfileComponent,
+    CommentComponent
   ],
   imports: [
     MatChipsModule,
