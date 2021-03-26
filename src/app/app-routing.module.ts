@@ -66,10 +66,6 @@ const routes: Routes = [
     path: 'firebase',
     component: FirebaseUploadComponent
   },
-  // {
-  //   path:"profile/:id",
-  //   component:TestChuyenTrangComponent
-  // },
   {
     path: 'blogadmin',
     component: AdminBlogDisplayComponent
