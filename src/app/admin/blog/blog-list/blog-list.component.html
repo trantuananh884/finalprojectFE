@@ -4,6 +4,9 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
+      <div style="text-align: center">
+        <a class="btn" routerLink="/titlebar">Create Blog</a>
+      </div>
       <table mat-table [dataSource]="blogs" matSort class="mat-elevation-z8">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>#</th>

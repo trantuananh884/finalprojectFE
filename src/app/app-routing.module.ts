@@ -110,7 +110,9 @@ const routes: Routes = [
   },
   {
     path : "logout",
-    component : LogoutComponent
+    component : LogoutComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path : "home",
@@ -132,20 +134,28 @@ const routes: Routes = [
   },
   {
     path : "usermng",
-    component : MainNavUserComponent
+    component : MainNavUserComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path: 'updateblog/:id',
-    component: UpdateBlogComponent
+    component: UpdateBlogComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
   {
     path: 'reclaim/:token',
-    component: ReclaimComponent
+    component: ReclaimComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   },
 
   {
     path: 'profile/:id',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate : [AuthGuard],
+    data : {roles : config.authRoles.user}
   }
 
 ];
