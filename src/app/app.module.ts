@@ -72,6 +72,7 @@ import { MainNavUserComponent } from './main-nav-user/main-nav-user.component';
 import { UpdateBlogComponent } from './update-blog/update-blog.component';
 import {ReclaimComponent} from "./reclaim/reclaim.component";
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {ProfileComponent} from "./profile-user/profile/profile.component";
 
 // import {TestChuyenTrangComponent} from './test-chuyen-trang/test-chuyen-trang.component';
 
@@ -111,7 +112,7 @@ Nosani,
     Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
-
+    ProfileComponent
   ],
   imports: [
     MatChipsModule,

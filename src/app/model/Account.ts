@@ -7,7 +7,7 @@ export interface Account {
   role?: Role[];
   email?: string;
   locked?: boolean;
-  firstname?: string;
-  lastname?: string;
-  createAt?: any;
+  firstName?: string;
+  lastName?: string;
+  createdAt?: any;
 }

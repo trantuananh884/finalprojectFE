@@ -23,6 +23,7 @@ import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
 import {ReclaimComponent} from "./reclaim/reclaim.component";
 import {UpdateBlogComponent} from './update-blog/update-blog.component';
+import {ProfileComponent} from "./profile-user/profile/profile.component";
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
@@ -88,7 +89,7 @@ const routes: Routes = [
     component: UserListComponent
   },
   {
-    path: 'profile/:id',
+    path: 'admin/profile/:id',
     component: UserInfoComponent
   },
   {
@@ -122,6 +123,11 @@ const routes: Routes = [
   {
     path: 'reclaim/:token',
     component: ReclaimComponent
+  },
+
+  {
+    path: 'profile/:id',
+    component: ProfileComponent
   }
 
 ];
