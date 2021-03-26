@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BlogService} from '../service/blog.service';
 import {Blog} from '../model/in/Blog';
 import {PageEvent} from '@angular/material/paginator';
@@ -9,33 +9,54 @@ import {PageEvent} from '@angular/material/paginator';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-blogs? :Blog[]=[];
-blogtop5viewd? :Blog[];
-blogtop5liked?:Blog[];
-pageSlice;
-  constructor(private blogService : BlogService) { }
+  displayDefault: boolean = true;
+  displaySearch : boolean = false;
+  blogs?: Blog[] = [];
+  blogtop5viewd?: Blog[];
+  blogtop5liked?: Blog[];
+  pageSlice;
+  searchkey?: string;
+
+  constructor(private blogService: BlogService) {
+  }
 
   ngOnInit(): void {
-    this.blogService.getAllPublicBlogs().subscribe(res=>{
+    this.blogService.getAllPublicBlogs().subscribe(res => {
       console.log(res)
-      this.blogs= res.data;
-      this.pageSlice= this.blogs.slice(0,3)
+      this.blogs = res.data;
+      this.pageSlice = this.blogs.slice(0, 10)
     })
-    this.blogService.get5topviewed().subscribe(res=>{
-      this.blogtop5viewd=res.data;
+    this.blogService.get5topviewed().subscribe(res => {
+      this.blogtop5viewd = res.data;
       console.log(this.blogtop5viewd)
     })
   }
 
   OnPageChange(envent: PageEvent) {
-  console.log("phan trang dược gọi")
-    const startIndex = envent.pageIndex*envent.pageSize;
-  console.log(envent.pageIndex)
-    let endIndex = startIndex +envent.pageSize;
-    if(endIndex>this.blogs.length){
-      endIndex =this.blogs.length;
+    console.log("phan trang dược gọi")
+    const startIndex = envent.pageIndex * envent.pageSize;
+    console.log(envent.pageIndex)
+    let endIndex = startIndex + envent.pageSize;
+    if (endIndex > this.blogs.length) {
+      endIndex = this.blogs.length;
     }
-    this.pageSlice=this.blogs.slice(startIndex,endIndex);
+    this.pageSlice = this.blogs.slice(startIndex, endIndex);
 
   }
+
+  search() {
+    console.log(this.searchkey)
+    this.blogService.searchBlog(this.searchkey).subscribe(res => {
+      this.blogs = res.data
+      this.displayDefault = false;
+      this.displaySearch = true;
+    }, error => {
+      this.blogs = [{}, {}, {}]
+      console.log(error)
+      this.displayDefault = false;
+      this.displaySearch = false;
+    })
+
+  }
+
 }

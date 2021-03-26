@@ -47,4 +47,8 @@ export class BlogService {
     return this.httpClient.patch<SystemResponse>(`${API_URL}blogs/${id}`,blogUpdateOut)
   }
 
+  searchBlog(searchKey : any) : Observable<SystemResponse>{
+    console.log(`${API_URL}blogs/search`)
+    return this.httpClient.get<SystemResponse>(`${API_URL}blogs/search/${searchKey}`,);
+  }
 }

@@ -3,9 +3,9 @@
   <tr>
     <td>
       <form class="example-form">
-        <mat-form-field class="example-full-width">
+        <mat-form-field class="example-full-width" >
           <mat-label>Search Blog</mat-label>
-          <input matInput placeholder="Ex. Blog" value="">
+          <input matInput placeholder="Ex. Blog" name="searchkey" [(ngModel)]="searchkey">
         </mat-form-field>
       </form>
     </td>
@@ -16,8 +16,9 @@
               aria-label="Toggle sidenav"
               mat-icon-button
               matTooltip="Delete this blog"
+              (click)="search()"
       >
-        <span><mat-icon>search</mat-icon></span>
+        <span><mat-icon >search</mat-icon></span>
       </button>
     </td>
   </tr>
@@ -25,12 +26,19 @@
 <div style="width: 30%; height: 800px; background: aquamarine; float: left"></div>
 <div style="width: 36%; margin-left: 2%; float: left">
   <div>
+    <div *ngIf="displayDefault">
   <app-thumbnail-display *ngFor="let blog of pageSlice" [blog]="blog"></app-thumbnail-display>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="displaySearch">
+      <app-thumbnail-display *ngFor="let blog of pageSlice" [blog]="blog"></app-thumbnail-display>
+    </div>
   </div>
 <mat-paginator
 [length] ="this.blogs.length"
-[pageSize]="3"
-[pageSizeOptions]="[3,6,9]"
+[pageSize]="10"
+[pageSizeOptions]="[10,15,20]"
 (page)="OnPageChange($event)"
 ></mat-paginator>
 </div>
@@ -44,3 +52,4 @@
   <app-thumb-nail-display-right *ngFor="let blog of blogtop5liked"[blog]="blog"></app-thumb-nail-display-right>
 
 </div>
+<a rhivoklof =rh></a>
