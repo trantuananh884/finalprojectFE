@@ -8,6 +8,8 @@ import {Observable} from "rxjs";
 import {SystemResponse} from "../model/response/SystemResponse";
 import {Email} from "../model/email";
 import {UserPasswordIn} from "../model/in/UserPasswordIn";
+import {Role} from "../model/Role";
+import {Authority} from "../model/Authority";
 
 
 const API_URL = `${environment.apiURL}`
@@ -23,16 +25,17 @@ export class JwtService {
 
   login(userLogin: UserLogin, rememberMe: boolean) {
     console.log(userLogin)
-    return this.httpClient.post<{ id: any, token: string, username: string, roles: any }>(`${API_URL}login`, userLogin).pipe(tap(res => {
+    return this.httpClient.post<{ id: any, token: string, username: string, roles: Authority[] }>(`${API_URL}login`, userLogin).pipe(tap(res => {
+      console.log(res)
       if (rememberMe == true) {
         localStorage.setItem('token', res.token);
         localStorage.setItem('username', res.username);
-        localStorage.setItem('roles', res.roles);
+        localStorage.setItem('roles', res.roles[0].authority);
         localStorage.setItem('userId', res.id)
       } else {
         sessionStorage.setItem('token', res.token);
         sessionStorage.setItem('username', res.username);
-        sessionStorage.setItem('roles', res.roles);
+        sessionStorage.setItem('roles', res.roles[0].authority);
         sessionStorage.setItem('userId', res.id)
       }
     }, error => {
@@ -93,6 +96,13 @@ export class JwtService {
 
   public getUserIdInSession() {
     return sessionStorage.getItem('userId');
+  }
+
+  public getUserRoleInSession(){
+    return sessionStorage.getItem('roles');
+  }
+  public getUserRoleInLocalStorage(){
+    return localStorage.getItem('roles');
   }
 
 }

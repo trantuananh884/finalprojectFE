@@ -39,81 +39,85 @@
 <!--      <button mat-button>SHARE</button>-->
 <!--    </mat-card-actions>-->
 <!--  </mat-card>-->
-
-        <div style="background-color: #f8f8f8; margin: 10px 0;">
-          <table style="width: 100%; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" >
-            <tr>
-              <td rowspan="2"><div class="previewimage" [style]="style"></div></td>
-              <td><p style="display: inline-block ;margin-left: 0%;font-size: xx-large;font-weight: bold">
-                {{blog.title}}
-              </p></td>
-              <td>
-                <div align="right">
+<div style="background-color: #f8f8f8; margin: 10px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <table
+          style="width: 100%; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
+          <tr>
+            <td rowspan="2">
+              <div class="previewimage" [style]="style"></div>
+            </td>
+            <td>
+              <div>
+                <span style="display: inline-block ;font-size: xx-large;font-weight: bold">
+                  {{blog.title}}
+                </span>
+              </div>
+            </td>
+            <td>
+              <div align="right">
                 <button type="button"
                         aria-label="Toggle sidenav"
                         mat-icon-button
                         matTooltip="Delete this blog"
-                        (click)="delete(blog.id)"
-                >
+                        (click)="delete(blog.id)">
                   <span><mat-icon>delete</mat-icon></span>
                 </button>
                 <button type="button"
                         aria-label="Toggle sidenav"
                         mat-icon-button
                         matTooltip="Update this blog"
-                        routerLink="/updateblog/{{blog.id}}"
-                >
+                        routerLink="/updateblog/{{blog.id}}">
                   <app-postpage *ngIf="false" [blogtoupdate]="blog"></app-postpage>
                   <span><mat-icon>update</mat-icon></span>
-
                 </button>
 
                 <button type="button"
                         aria-label="Toggle sidenav"
                         mat-icon-button
                         matTooltip="See this blog"
-                        routerLink="/blogs/{{blog.id}}"
-                >
+                        routerLink="/blogs/{{blog.id}}">
                   <span><mat-icon>remove_red_eye</mat-icon></span>
                 </button>
-                  <button type="button"
-                          aria-label="Toggle sidenav"
-                          mat-icon-button
-                          matTooltip="See my profile"
-                  >
-                    <span><mat-icon>person_pin</mat-icon></span>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-
-              <td></td>
-              <td>
-                <div align="right">{{blog.views}}
-                <mat-icon
-                  matTooltip="View"> bar_chart</mat-icon>
+                <button type="button"
+                        aria-label="Toggle sidenav"
+                        mat-icon-button
+                        matTooltip="See my profile">
+                  <span><mat-icon>person_pin</mat-icon></span>
+                </button>
               </div>
-                </td>
-            </tr>
-          </table>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <div align="right">{{blog.views}}
+                <mat-icon
+                  matTooltip="View"> bar_chart
+                </mat-icon>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
 
 
+  <!--            <div style="display: inline-block" mat-card-avatar class="example-header-image">-->
 
-<!--            <div style="display: inline-block" mat-card-avatar class="example-header-image">-->
+  <!--            </div>-->
+  <!--            <mat-card-title>Shiba Inu</mat-card-title>-->
+  <!--            <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
 
-<!--            </div>-->
-<!--            <mat-card-title>Shiba Inu</mat-card-title>-->
-<!--            <mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
-
-        <!--        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
-
+  <!--        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
 
 
-
-        </div>
+</div>
 
 
 

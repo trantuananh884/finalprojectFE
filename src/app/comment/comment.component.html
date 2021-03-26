@@ -1,0 +1,63 @@
+<div class="comments-app" style="margin-left: 45%">
+  <h1>Bình luận</h1>
+  <!--  <p>&#128512;</p>-->
+
+  <!-- Comments List -->
+
+  <div class="comments">
+    <div *ngIf="!loggedIn">
+      <p>Hãy <a routerLink="/login">đăng nhập</a> để bình luận. Nếu chưa có tài khoản hãy <a routerLink="/register">đăng
+        kí</a></p>
+    </div>
+    <div class="comment-form">
+      <div *ngIf="loggedIn">
+        <form [formGroup]="commentForm">
+          <div class="form-row">
+          <textarea formControlName="content"
+                    class="input"
+                    placeholder="Viết bình luận..."
+          ></textarea>
+          </div>
+          <div class="form-row">
+            <button (click)="comment()">comment</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <h2 style="color: blue; margin-left: 5px">Mới nhất</h2>
+    <!-- Comment Avatar -->
+
+    <!-- Comment Box -->
+    <div *ngFor="let comment of allComments">
+      <div class="comment-box">
+
+        <div class="comment-text" style="font-size: medium;text-decoration-style: solid"><a><b style="color: red;font-size: large">{{comment.username.toUpperCase()}}      : </b></a>{{comment.content}}</div>
+        <div class="comment-footer">
+          <div class="comment-info">
+            <span class="comment-author">
+            </span>
+            <span class="comment-date">{{comment.commentedAt}}</span>
+            <div class="comment-actions">
+            </div>
+          </div>
+          <div *ngIf="this.userName == comment.username">
+            <button mat-flat-button color="warn" (click)="deleteComment(comment.id)">DELETE</button>
+            <button mat-flat-button color="primary" (click)="showUpdateForm(comment.id)" ng-show="!showForm">UPDATE</button>
+<!--            <button ng-show="!showForm">update</button>-->
+            <form (ngSubmit)="update(comment.id)">
+              <div [id]="'input'+comment.id" style="display: none">
+                <input type="text" value="{{comment.content}}" [id]="'val'+comment.id">
+                <button (click)="hideForm(comment.id)">X</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  -->
+  <!--  <button (click)="show(1)">Show</button>-->
+  <!--  <input type="text" id="ip" style="display: none">-->
+</div>
