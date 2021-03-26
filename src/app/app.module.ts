@@ -112,6 +112,7 @@ Nosani,
     UpdateBlogComponent,
     ReclaimComponent,
 
+
   ],
   imports: [
     MatChipsModule,

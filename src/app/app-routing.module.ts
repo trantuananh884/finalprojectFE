@@ -12,17 +12,18 @@ import {RegisterComponent} from "./register/register.component";
 import {AdminBlogDisplayComponent} from './admin-blog-display/admin-blog-display.component';
 import {IndexComponent} from './index/index.component';
 import {LogoutComponent} from "./logout/logout.component";
-import {AuthGuard} from "./service/auth.guard";
 import {HomeComponent} from './home/home.component';
 import {MainNavUserComponent} from './main-nav-user/main-nav-user.component';
+
+import {ReclaimComponent} from "./reclaim/reclaim.component";
+import {UpdateBlogComponent} from './update-blog/update-blog.component';
+import {AuthGuard} from "./service/auth.guard";
 import {CategoryListComponent} from "./admin/category/category-list/category-list.component";
 import {CategoryCreateComponent} from "./admin/category/category-create/category-create.component";
 import {CategoryUpdateComponent} from "./admin/category/category-update/category-update.component";
 import {UserListComponent} from "./admin/user/user-list/user-list.component";
 import {UserInfoComponent} from "./admin/user/user-info/user-info.component";
 import {BlogListComponent} from "./admin/blog/blog-list/blog-list.component";
-import {ReclaimComponent} from "./reclaim/reclaim.component";
-import {UpdateBlogComponent} from './update-blog/update-blog.component';
 // import {TestChuyenTrangComponent} from "./test-chuyen-trang/test-chuyen-trang.component";
 
 const routes: Routes = [
