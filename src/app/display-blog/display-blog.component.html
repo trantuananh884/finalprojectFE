@@ -1,27 +1,31 @@
 <app-toolbar></app-toolbar>
 <div class="container">
   <div class="row">
-    <app-like></app-like>
-    <div class="col-md-3">
-      <div><b>Title</b></div>
-      <br>
-      <div [innerHTML]="blog.title"></div>
-    </div>
-    <div class="col-md-3">
-      <div><b>Content</b></div>
-      <br>
-      <div [innerHTML]="blog.content | noSanitize"></div>
-    </div>
-    <div class="col-md-3">
-      <div><b>CreatedAt</b></div>
-      <br>
-      <div [innerHTML]="blog.createdAt"></div>
-    </div>
-    <div class="col-md-3">
+
+
+    <div style="margin-top: 5%">
+      <div style="display: inline-block" >
+        <div><b>CreatedAt</b></div>
+        <br>
+        <div [innerHTML]="blog.createdAt"></div>
+      </div>
+    <div style="margin-left: 80%;display: inline-block">
       <div><b>Views</b></div>
       <br>
       <div [innerHTML]="blog.views"></div>
     </div>
+    </div>
+    <div style="margin-left: 20%">
+      <div style="font-size: xx-large;font-weight: bold;margin-bottom: 5%" [innerHTML]="blog.title"></div>
+    </div>
+    <div >
+
+      <div style="width: 100%; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);height: 1000px;width: 800px;margin-left: 20%;background-color: #dddddd" [innerHTML]="blog.content | noSanitize"></div>
+    </div>
+
+
   </div>
 </div>
 <!--<div [innerHTML]="blog.title"></div>-->
@@ -38,4 +42,4 @@
   </mat-chip-list>
 </mat-form-field>
 <app-share-gmail></app-share-gmail>
-<app-comment></app-comment>
+

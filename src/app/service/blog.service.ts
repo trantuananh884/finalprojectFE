@@ -46,5 +46,7 @@ export class BlogService {
   updateBlog(id:number,blogUpdateOut : BlogUpdateOut): Observable<SystemResponse>{
     return this.httpClient.patch<SystemResponse>(`${API_URL}blogs/${id}`,blogUpdateOut)
   }
-
+get5topliked():Observable<SystemResponse>{
+  return this.httpClient.get<SystemResponse>(`${API_URL}blogs/toplikes`)
+}
 }

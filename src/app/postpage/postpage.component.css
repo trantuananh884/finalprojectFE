@@ -8,14 +8,21 @@
 .example-full-width {
   width: 91%;
 }
-.button{
+
+.button {
   text-align: center;
   display: inline-block;
   right: 0px;
 }
-.example-chip-list{
+
+.example-chip-list {
   width: 100%;
 }
-.description{
+
+.description {
   width: 100%;
+}
+
+h2 {
+  text-align: center;
 }

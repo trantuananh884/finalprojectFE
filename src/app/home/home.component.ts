@@ -19,11 +19,15 @@ pageSlice;
     this.blogService.getAllPublicBlogs().subscribe(res=>{
       console.log(res)
       this.blogs= res.data;
-      this.pageSlice= this.blogs.slice(0,3)
+      this.pageSlice= this.blogs.slice(0,10)
     })
     this.blogService.get5topviewed().subscribe(res=>{
       this.blogtop5viewd=res.data;
       console.log(this.blogtop5viewd)
+    })
+    this.blogService.get5topliked().subscribe(res=>{
+      this.blogtop5liked=res.data;
+      console.log(this.blogtop5liked)
     })
   }
 
